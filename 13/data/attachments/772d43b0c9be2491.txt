@@ -1,0 +1,336 @@
+RESPONSE:
+{
+    "status": {
+        "error_code": 0,
+        "error_message": "",
+        "alert_message": ""
+    },
+    "data": {
+        "filter": [
+            {
+                "key": "filter_brand",
+                "name": "Thương Hiệu",
+                "limitselect": 0,
+                "type": "text",
+                "values": [
+                    {
+                        "key": "208558",
+                        "label": "LipIce",
+                        "value": 27
+                    },
+                    {
+                        "key": "211543",
+                        "label": "australis",
+                        "value": 22
+                    },
+                    {
+                        "key": "4462",
+                        "label": "3CE",
+                        "value": 20
+                    },
+                    {
+                        "key": "6963",
+                        "label": "Naris Cosmetics",
+                        "value": 16
+                    },
+                    {
+                        "key": "8732",
+                        "label": "Milaganics",
+                        "value": 15
+                    },
+                    {
+                        "key": "222280",
+                        "label": "Colorkey",
+                        "value": 13
+                    },
+                    {
+                        "key": "210",
+                        "label": "L'Oreal",
+                        "value": 12
+                    },
+                    {
+                        "key": "1399",
+                        "label": "Vaseline",
+                        "value": 11
+                    },
+                    {
+                        "key": "226530",
+                        "label": "BYS",
+                        "value": 10
+                    },
+                    {
+                        "key": "213",
+                        "label": "Maybelline",
+                        "value": 8
+                    },
+                    {
+                        "key": "208949",
+                        "label": "Flawsome",
+                        "value": 7
+                    },
+                    {
+                        "key": "209249",
+                        "label": "Curél",
+                        "value": 7
+                    },
+                    {
+                        "key": "1946",
+                        "label": "Nivea",
+                        "value": 6
+                    },
+                    {
+                        "key": "208937",
+                        "label": "Lip On Lip",
+                        "value": 5
+                    },
+                    {
+                        "key": "223719",
+                        "label": "Judydoll",
+                        "value": 5
+                    },
+                    {
+                        "key": "213541",
+                        "label": "BareSoul",
+                        "value": 3
+                    },
+                    {
+                        "key": "217037",
+                        "label": "Nuxe",
+                        "value": 3
+                    },
+                    {
+                        "key": "4778",
+                        "label": "Mediheal",
+                        "value": 3
+                    },
+                    {
+                        "key": "7093",
+                        "label": "Silkygirl",
+                        "value": 3
+                    },
+                    {
+                        "key": "1383",
+                        "label": "Bioderma",
+                        "value": 1
+                    },
+                    {
+                        "key": "1398",
+                        "label": "innisfree",
+                        "value": 1
+                    },
+                    {
+                        "key": "203",
+                        "label": "La Roche-Posay",
+                        "value": 1
+                    },
+                    {
+                        "key": "2972",
+                        "label": "Senka",
+                        "value": 1
+                    },
+                    {
+                        "key": "4566",
+                        "label": "DHC",
+                        "value": 1
+                    }
+                ],
+                "sort_order": 99
+            },
+            {
+                "key": "filter_hsk_size",
+                "name": "Dung tích",
+                "limitselect": 0,
+                "type": "text",
+                "values": [
+                    {
+                        "key": "212439",
+                        "label": "Fullsize",
+                        "value": 135
+                    },
+                    {
+                        "key": "212445",
+                        "label": "Combo",
+                        "value": 19
+                    },
+                    {
+                        "key": "212441",
+                        "label": "Minisize",
+                        "value": 1
+                    }
+                ],
+                "sort_order": 11
+            },
+            {
+                "key": "filter_hsk_tones",
+                "name": "Màu sắc",
+                "limitselect": 0,
+                "type": "text",
+                "values": [
+                    {
+                        "key": "220930",
+                        "label": "Hồng",
+                        "value": 20
+                    },
+                    {
+                        "key": "220928",
+                        "label": "Đỏ",
+                        "value": 13
+                    },
+                    {
+                        "key": "220932",
+                        "label": "Cam",
+                        "value": 3
+                    },
+                    {
+                        "key": "212241",
+                        "label": "Da tự nhiên",
+                        "value": 2
+                    },
+                    {
+                        "key": "221074",
+                        "label": "Trong suốt",
+                        "value": 2
+                    },
+                    {
+                        "key": "221284",
+                        "label": "Nude",
+                        "value": 2
+                    },
+                    {
+                        "key": "219081",
+                        "label": "Nâu",
+                        "value": 1
+                    }
+                ],
+                "sort_order": 15
+            },
+            {
+                "key": "filter_hsk_product_type",
+                "name": "Loại sản phẩm",
+                "limitselect": 0,
+                "type": "text",
+                "values": [
+                    {
+                        "key": "212181",
+                        "label": "Son dưỡng",
+                        "value": 65
+                    },
+                    {
+                        "key": "212151",
+                        "label": "Son thỏi",
+                        "value": 46
+                    },
+                    {
+                        "key": "212153",
+                        "label": "Son kem",
+                        "value": 34
+                    },
+                    {
+                        "key": "212155",
+                        "label": "Son bóng",
+                        "value": 13
+                    },
+                    {
+                        "key": "216575",
+                        "label": "Son bút chì",
+                        "value": 1
+                    }
+                ],
+                "sort_order": 10
+            },
+            {
+                "key": "filter_dac_tinh",
+                "name": "Đặc tính",
+                "limitselect": 0,
+                "type": "text",
+                "values": [
+                    {
+                        "key": "2725",
+                        "label": "Dạng lì",
+                        "value": 57
+                    },
+                    {
+                        "key": "2737",
+                        "label": "Có màu ",
+                        "value": 29
+                    },
+                    {
+                        "key": "2739",
+                        "label": "Không màu",
+                        "value": 25
+                    },
+                    {
+                        "key": "2727",
+                        "label": "Dạng bóng",
+                        "value": 11
+                    },
+                    {
+                        "key": "220391",
+                        "label": "Dạng satin",
+                        "value": 8
+                    },
+                    {
+                        "key": "220673",
+                        "label": "Thuần chay (vegan)",
+                        "value": 3
+                    }
+                ],
+                "sort_order": 3
+            },
+            {
+                "key": "filter_origin",
+                "name": "Xuất xứ thương hiệu",
+                "limitselect": 0,
+                "type": "text",
+                "values": [
+                    {
+                        "key": "12342",
+                        "label": "Nhật Bản",
+                        "value": 63
+                    },
+                    {
+                        "key": "257",
+                        "label": "Úc",
+                        "value": 32
+                    },
+                    {
+                        "key": "209",
+                        "label": "Hàn Quốc",
+                        "value": 23
+                    },
+                    {
+                        "key": "214",
+                        "label": "Mỹ",
+                        "value": 19
+                    },
+                    {
+                        "key": "10743",
+                        "label": "Việt Nam",
+                        "value": 18
+                    },
+                    {
+                        "key": "11439",
+                        "label": "Trung Quốc",
+                        "value": 18
+                    },
+                    {
+                        "key": "200",
+                        "label": "Pháp",
+                        "value": 16
+                    },
+                    {
+                        "key": "1968",
+                        "label": "Ðức",
+                        "value": 6
+                    },
+                    {
+                        "key": "7261",
+                        "label": "Malaysia",
+                        "value": 3
+                    }
+                ],
+                "sort_order": 4
+            }
+        ]
+    }
+}

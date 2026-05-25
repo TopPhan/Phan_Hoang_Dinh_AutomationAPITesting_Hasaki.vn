@@ -1,0 +1,9 @@
+RESPONSE:
+{
+    "status": {
+        "error_code": 1,
+        "error_message": "product id empty",
+        "alert_message": "Cập nhật sản phẩm không thành công !"
+    },
+    "data": null
+}

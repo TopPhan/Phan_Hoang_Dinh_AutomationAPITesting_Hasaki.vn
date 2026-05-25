@@ -1,0 +1,9 @@
+RESPONSE:
+{
+    "status": {
+        "error_code": 4,
+        "error_message": "failed",
+        "alert_message": "Cập nhật thất bại, Sản phẩm không đáp ứng được số lượng !"
+    },
+    "data": null
+}

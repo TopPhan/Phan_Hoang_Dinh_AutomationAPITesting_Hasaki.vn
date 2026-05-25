@@ -1,0 +1,9 @@
+RESPONSE:
+{
+    "status": {
+        "error_code": 3,
+        "error_message": "username incorrect.",
+        "alert_message": "Tên đăng nhập hoặc mật khẩu không khớp !"
+    },
+    "data": null
+}

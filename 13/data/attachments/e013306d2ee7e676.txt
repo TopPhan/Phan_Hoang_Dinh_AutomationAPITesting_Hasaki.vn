@@ -1,0 +1,1 @@
+PASS: TC_S12_SearchResponseTime

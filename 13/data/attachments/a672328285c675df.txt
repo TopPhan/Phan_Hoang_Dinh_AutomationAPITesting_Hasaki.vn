@@ -1,0 +1,9 @@
+RESPONSE:
+{
+    "status": {
+        "error_code": 2,
+        "error_message": "failed",
+        "alert_message": "Sản phẩm không tồn tại"
+    },
+    "data": null
+}
