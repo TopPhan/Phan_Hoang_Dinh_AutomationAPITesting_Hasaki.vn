@@ -1,0 +1,424 @@
+RESPONSE:
+{
+    "status": {
+        "error_code": 0,
+        "error_message": "",
+        "alert_message": ""
+    },
+    "data": {
+        "filter": [
+            {
+                "name": "Danh mục",
+                "limitselect": 0,
+                "type": "text",
+                "request_var": "filter_category",
+                "items": [
+                    {
+                        "label": "Sức Khỏe - Làm Đẹp",
+                        "key": "3"
+                    },
+                    {
+                        "label": "Thời Trang",
+                        "key": "2351"
+                    },
+                    {
+                        "label": "Gia Dụng & Đời Sống",
+                        "key": "2440"
+                    },
+                    {
+                        "label": "Sản Phẩm Cho Bé",
+                        "key": "2497"
+                    },
+                    {
+                        "label": "Hasaki Clinic & Spa",
+                        "key": "331"
+                    },
+                    {
+                        "label": "DermaHair",
+                        "key": "2298"
+                    }
+                ]
+            },
+            {
+                "name": "Thương Hiệu",
+                "limitselect": 0,
+                "type": "text",
+                "sort_order": 99,
+                "request_var": "filter_brand",
+                "items": [
+                    {
+                        "key": "167574",
+                        "label": "Anessa",
+                        "value": "167574"
+                    },
+                    {
+                        "key": "211443",
+                        "label": "Cell Fusion C",
+                        "value": "211443"
+                    },
+                    {
+                        "key": "223998",
+                        "label": "Beplain",
+                        "value": "223998"
+                    },
+                    {
+                        "key": "2295",
+                        "label": "Garnier",
+                        "value": "2295"
+                    },
+                    {
+                        "key": "210",
+                        "label": "L'Oreal",
+                        "value": "210"
+                    },
+                    {
+                        "key": "226694",
+                        "label": "Clinicos",
+                        "value": "226694"
+                    },
+                    {
+                        "key": "2418",
+                        "label": "Bio-essence",
+                        "value": "2418"
+                    },
+                    {
+                        "key": "247090",
+                        "label": "Dinsee",
+                        "value": "247090"
+                    },
+                    {
+                        "key": "211570",
+                        "label": "Caryophy",
+                        "value": "211570"
+                    },
+                    {
+                        "key": "1398",
+                        "label": "innisfree",
+                        "value": "1398"
+                    },
+                    {
+                        "key": "234763",
+                        "label": "Axis-Y",
+                        "value": "234763"
+                    },
+                    {
+                        "key": "236343",
+                        "label": "Round Lab",
+                        "value": "236343"
+                    },
+                    {
+                        "key": "1419",
+                        "label": "Neutrogena",
+                        "value": "1419"
+                    },
+                    {
+                        "key": "1990",
+                        "label": "CeraVe",
+                        "value": "1990"
+                    },
+                    {
+                        "key": "204355",
+                        "label": "Tenamyd",
+                        "value": "204355"
+                    },
+                    {
+                        "key": "208868",
+                        "label": "Acnes",
+                        "value": "208868"
+                    },
+                    {
+                        "key": "211543",
+                        "label": "australis",
+                        "value": "211543"
+                    },
+                    {
+                        "key": "215",
+                        "label": "Cetaphil",
+                        "value": "215"
+                    },
+                    {
+                        "key": "216737",
+                        "label": "Cosrx",
+                        "value": "216737"
+                    },
+                    {
+                        "key": "221028",
+                        "label": "Skintific",
+                        "value": "221028"
+                    },
+                    {
+                        "key": "225194",
+                        "label": "Decumar",
+                        "value": "225194"
+                    },
+                    {
+                        "key": "8277",
+                        "label": "Skin1004",
+                        "value": "8277"
+                    }
+                ]
+            },
+            {
+                "name": "Dung tích",
+                "limitselect": 0,
+                "type": "text",
+                "sort_order": 11,
+                "request_var": "filter_hsk_size",
+                "items": [
+                    {
+                        "key": "212439",
+                        "label": "Fullsize",
+                        "value": "212439"
+                    },
+                    {
+                        "key": "212445",
+                        "label": "Combo",
+                        "value": "212445"
+                    },
+                    {
+                        "key": "212441",
+                        "label": "Minisize",
+                        "value": "212441"
+                    }
+                ]
+            },
+            {
+                "name": "Thành phần nổi bật",
+                "limitselect": 0,
+                "type": "text",
+                "sort_order": 8,
+                "request_var": "filter_hsk_ingredient",
+                "items": [
+                    {
+                        "key": "218667",
+                        "label": "Chống nắng vật lý lai hoá học",
+                        "value": "218667"
+                    },
+                    {
+                        "key": "218665",
+                        "label": "Chống nắng hoá học",
+                        "value": "218665"
+                    },
+                    {
+                        "key": "218663",
+                        "label": "Chống nắng vật lý",
+                        "value": "218663"
+                    },
+                    {
+                        "key": "212393",
+                        "label": "BHA (Salicylic Acid)",
+                        "value": "212393"
+                    },
+                    {
+                        "key": "212387",
+                        "label": "Vitamin C",
+                        "value": "212387"
+                    },
+                    {
+                        "key": "212411",
+                        "label": "Niacinamide (Vitamin B3)",
+                        "value": "212411"
+                    }
+                ]
+            },
+            {
+                "name": "Loại da",
+                "limitselect": 0,
+                "type": "text",
+                "sort_order": 13,
+                "request_var": "filter_hsk_skin_type",
+                "items": [
+                    {
+                        "key": "212365",
+                        "label": "Da thường/Mọi loại da",
+                        "value": "212365"
+                    },
+                    {
+                        "key": "212355",
+                        "label": "Da dầu/Hỗn hợp dầu",
+                        "value": "212355"
+                    },
+                    {
+                        "key": "220627",
+                        "label": "Da nhạy cảm",
+                        "value": "220627"
+                    },
+                    {
+                        "key": "212359",
+                        "label": "Da khô/Hỗn hợp khô",
+                        "value": "212359"
+                    },
+                    {
+                        "key": "224575",
+                        "label": "Da mụn",
+                        "value": "224575"
+                    }
+                ]
+            },
+            {
+                "name": "Công dụng chính",
+                "limitselect": 0,
+                "type": "text",
+                "sort_order": 16,
+                "request_var": "filter_hsk_uses",
+                "items": [
+                    {
+                        "key": "212249",
+                        "label": "Kiểm soát dầu và giảm mụn",
+                        "value": "212249"
+                    },
+                    {
+                        "key": "220127",
+                        "label": "Nâng tông da",
+                        "value": "220127"
+                    },
+                    {
+                        "key": "225051",
+                        "label": "Bảo vệ da tối ưu",
+                        "value": "225051"
+                    },
+                    {
+                        "key": "212251",
+                        "label": "Làm sáng và đều màu da",
+                        "value": "212251"
+                    },
+                    {
+                        "key": "212247",
+                        "label": "Dưỡng ẩm và cấp nước",
+                        "value": "212247"
+                    },
+                    {
+                        "key": "212279",
+                        "label": "Làm dịu, phục hồi và tái tạo da",
+                        "value": "212279"
+                    },
+                    {
+                        "key": "212255",
+                        "label": "Giảm dầu, bết tóc",
+                        "value": "212255"
+                    },
+                    {
+                        "key": "217465",
+                        "label": "Chống oxy hoá",
+                        "value": "217465"
+                    }
+                ]
+            },
+            {
+                "name": "Loại sản phẩm",
+                "limitselect": 0,
+                "type": "text",
+                "sort_order": 10,
+                "request_var": "filter_hsk_product_type",
+                "items": [
+                    {
+                        "key": "212223",
+                        "label": "Kem chống nắng",
+                        "value": "212223"
+                    },
+                    {
+                        "key": "216281",
+                        "label": "Bộ chăm sóc da",
+                        "value": "216281"
+                    },
+                    {
+                        "key": "217311",
+                        "label": "Xịt chống nắng",
+                        "value": "217311"
+                    },
+                    {
+                        "key": "212183",
+                        "label": "Serum / Tinh chất",
+                        "value": "212183"
+                    },
+                    {
+                        "key": "224715",
+                        "label": "Nước tẩy trang",
+                        "value": "224715"
+                    }
+                ]
+            },
+            {
+                "name": "Đặc tính",
+                "limitselect": 0,
+                "type": "text",
+                "sort_order": 3,
+                "request_var": "filter_dac_tinh",
+                "items": [
+                    {
+                        "key": "222270",
+                        "label": "Chống nắng phổ rộng",
+                        "value": "222270"
+                    },
+                    {
+                        "key": "2794",
+                        "label": "Chống nước/lâu trôi",
+                        "value": "2794"
+                    },
+                    {
+                        "key": "220673",
+                        "label": "Thuần chay (vegan)",
+                        "value": "220673"
+                    }
+                ]
+            },
+            {
+                "name": "Xuất xứ thương hiệu",
+                "limitselect": 0,
+                "type": "text",
+                "sort_order": 4,
+                "request_var": "filter_origin",
+                "items": [
+                    {
+                        "key": "209",
+                        "label": "Hàn Quốc",
+                        "value": "209"
+                    },
+                    {
+                        "key": "200",
+                        "label": "Pháp",
+                        "value": "200"
+                    },
+                    {
+                        "key": "12342",
+                        "label": "Nhật Bản",
+                        "value": "12342"
+                    },
+                    {
+                        "key": "10743",
+                        "label": "Việt Nam",
+                        "value": "10743"
+                    },
+                    {
+                        "key": "2421",
+                        "label": "Singapore",
+                        "value": "2421"
+                    },
+                    {
+                        "key": "2075",
+                        "label": "Canada",
+                        "value": "2075"
+                    },
+                    {
+                        "key": "214",
+                        "label": "Mỹ",
+                        "value": "214"
+                    },
+                    {
+                        "key": "257",
+                        "label": "Úc",
+                        "value": "257"
+                    }
+                ]
+            },
+            {
+                "key": "price",
+                "name": "Khoảng giá",
+                "limitselect": 0,
+                "type": "price",
+                "request_var": "price",
+                "sort_order": 100
+            }
+        ]
+    }
+}

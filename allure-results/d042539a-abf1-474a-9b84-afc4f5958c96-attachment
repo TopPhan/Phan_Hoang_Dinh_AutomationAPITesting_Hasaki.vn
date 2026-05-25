@@ -1,0 +1,530 @@
+RESPONSE:
+{
+    "status": {
+        "error_code": 0,
+        "error_message": "",
+        "alert_message": ""
+    },
+    "data": {
+        "meta_data": {
+            "products_total": 65,
+            "current_cate": [
+                
+            ],
+            "is_spa": false,
+            "log": {
+                "usrId": "daaf2794-28c0-469d-b135-592ae646736e",
+                "total": 65,
+                "limit": 10,
+                "srt": 0,
+                "lstId": "8b456452-339a-586b-9c49-4968db80af69"
+            },
+            "sort_params": [
+                {
+                    "label": "Mới nhất",
+                    "value": "position",
+                    "selected": false
+                },
+                {
+                    "label": "Bán chạy",
+                    "value": "topsale",
+                    "selected": true
+                },
+                {
+                    "label": "Giá thấp đến cao",
+                    "value": "price_asc",
+                    "selected": false
+                },
+                {
+                    "label": "Giá cao đến thấp",
+                    "value": "price_desc",
+                    "selected": false
+                }
+            ]
+        },
+        "is_redirect": false,
+        "url_redirect": "",
+        "products": [
+            {
+                "id": 65994,
+                "sku": "318900012",
+                "name": "Nước Hoa Hồng Klairs Không Mùi Cho Da Nhạy Cảm 180ml",
+                "product_url": "https://hasaki.vn/san-pham/nuoc-hoa-hong-khong-mui-klairs-danh-cho-da-nhay-cam-180ml-65994.html",
+                "english_name": "Supple Preparation Unscented Toner",
+                "category_name": "Toner / Nước Cân Bằng Da",
+                "brand": {
+                    "name": "Klairs",
+                    "off_online": false,
+                    "off_online_url": null,
+                    "url": "https://hasaki.vn/thuong-hieu/klairs.html",
+                    "image": "https://media.hcdn.vn//hsk/brandklairs-logo1779334979.jpg",
+                    "id": 2182,
+                    "followed": false,
+                    "following": null
+                },
+                "image": "https://media.hcdn.vn/catalog/product/f/a/facebook-dynamic-nuoc-hoa-hong-khong-mui-klairs-danh-cho-da-nhay-cam-180ml-1779419101.jpg",
+                "market_price": 435000,
+                "price": 229000,
+                "discount_percent": 47,
+                "promotion_text": null,
+                "promotion_badge": null,
+                "quantity": 74324,
+                "out_stock_text": null,
+                "bought_count": 1411,
+                "gift": {
+                    "text": "Tặng: Mặt Nạ Klairs Làm Dịu Da & Kiểm Soát Dầu Nhờn 25ml (SL Có Hạn)",
+                    "image": "https://media.hcdn.vn/catalog/product/f/a/facebook-dynamic-nuoc-hoa-hong-klairs-khong-mui-cho-da-nhay-cam-30ml-1779345964.jpg",
+                    "image_38": "https://media.hcdn.vn/catalog/product/f/a/facebook-dynamic-nuoc-hoa-hong-klairs-khong-mui-cho-da-nhay-cam-30ml-1779345964_img_38x38_2b8932_fit_center.jpg",
+                    "image_80": "https://media.hcdn.vn/catalog/product/f/a/facebook-dynamic-nuoc-hoa-hong-klairs-khong-mui-cho-da-nhay-cam-30ml-1779345964_img_80x80_d200c5_fit_center.jpg"
+                },
+                "deal": {
+                    "deal_id": 2915,
+                    "quantity": 62,
+                    "bought_percent": 62,
+                    "start": 1597078800,
+                    "expired": 1779728399,
+                    "time_remain": 8784
+                },
+                "icon_delivery": null,
+                "spa": null,
+                "is_spa": false,
+                "rating": {
+                    "avgPercent": 96,
+                    "avg_rate": 4.8,
+                    "total_rate": 148
+                },
+                "category_id": 1857,
+                "sub_stamp": "https://media.hcdn.vn/catalog/product/t/e/tem-phu-nuoc-hoa-hong-khong-mui-klairs-danh-cho-da-nhay-cam-180ml-1759906958.jpg",
+                "icon_highlight_config": null
+            },
+            {
+                "id": 78140,
+                "sku": "358700002",
+                "name": "Nước Hoa Hồng Caryophy Ngừa Mụn Kiềm Dầu Giảm Thâm 300ml",
+                "product_url": "https://hasaki.vn/san-pham/nuoc-hoa-hong-cho-da-mun-caryophy-300ml-78140.html",
+                "english_name": "Portulaca Toner",
+                "category_name": "Toner / Nước Cân Bằng Da",
+                "brand": {
+                    "name": "Caryophy",
+                    "off_online": false,
+                    "off_online_url": null,
+                    "url": "https://hasaki.vn/thuong-hieu/caryophy.html",
+                    "image": "https://media.hcdn.vn//hsk/brandCaryophy-logo-brand1722250967.jpg",
+                    "id": 2612,
+                    "followed": false,
+                    "following": null
+                },
+                "image": "https://media.hcdn.vn/catalog/product/p/r/special-deal-nuoc-hoa-hong-cho-da-mun-caryophy-300ml_kc2i67cHLqz4oQAv.png",
+                "market_price": 380000,
+                "price": 246000,
+                "discount_percent": 35,
+                "promotion_text": null,
+                "promotion_badge": null,
+                "quantity": 19536,
+                "out_stock_text": null,
+                "bought_count": 192,
+                "gift": null,
+                "deal": {
+                    "deal_id": 12929,
+                    "quantity": 55,
+                    "bought_percent": 55,
+                    "start": 1779674400,
+                    "expired": 1779728399,
+                    "time_remain": 8784
+                },
+                "icon_delivery": null,
+                "spa": null,
+                "is_spa": false,
+                "rating": {
+                    "avgPercent": 96,
+                    "avg_rate": 4.8,
+                    "total_rate": 19
+                },
+                "category_id": 1857,
+                "sub_stamp": "https://media.hcdn.vn/catalog/product/t/e/tem-phu-nuoc-hoa-hong-cho-da-mun-caryophy-300ml-1761794617.jpg",
+                "icon_highlight_config": null
+            },
+            {
+                "id": 61216,
+                "sku": "211300002",
+                "name": "Nước Hoa Hồng Simple Làm Dịu Da & Cấp Ẩm 200ml",
+                "product_url": "https://hasaki.vn/san-pham/nuoc-hoa-hong-simple-danh-cho-da-nhay-cam-200ml-61216.html",
+                "english_name": "Kind to Skin Soothing Facial Toner",
+                "category_name": "Toner / Nước Cân Bằng Da",
+                "brand": {
+                    "name": "Simple",
+                    "off_online": false,
+                    "off_online_url": null,
+                    "url": "https://hasaki.vn/thuong-hieu/simple.html",
+                    "image": "https://media.hcdn.vn//hsk/brandbrandsimple-logo1763966500.jpg",
+                    "id": 149,
+                    "followed": false,
+                    "following": null
+                },
+                "image": "https://media.hcdn.vn/catalog/product/f/a/facebook-dynamic-nuoc-hoa-hong-simple-danh-cho-da-nhay-cam-200ml-1764917445.jpg",
+                "market_price": 180000,
+                "price": 118000,
+                "discount_percent": 34,
+                "promotion_text": null,
+                "promotion_badge": null,
+                "quantity": 4376,
+                "out_stock_text": null,
+                "bought_count": 215,
+                "gift": null,
+                "deal": {
+                    "deal_id": 2915,
+                    "quantity": 62,
+                    "bought_percent": 62,
+                    "start": 1597078800,
+                    "expired": 1779728399,
+                    "time_remain": 8784
+                },
+                "icon_delivery": null,
+                "spa": null,
+                "is_spa": false,
+                "rating": {
+                    "avgPercent": 98.00000000000001,
+                    "avg_rate": 4.9,
+                    "total_rate": 76
+                },
+                "category_id": 1857,
+                "sub_stamp": "https://media.hcdn.vn/catalog/product/t/e/tem-phu-nuoc-hoa-hong-simple-danh-cho-da-nhay-cam-200ml-1764036270.jpg",
+                "icon_highlight_config": null
+            },
+            {
+                "id": 65998,
+                "sku": "318900011",
+                "name": "Nước Hoa Hồng Klairs Dành Cho Da Nhạy Cảm 180ml",
+                "product_url": "https://hasaki.vn/san-pham/nuoc-hoa-hong-klairs-danh-cho-da-nhay-cam-180ml-65998.html",
+                "english_name": "Supple Preparation Facial Toner",
+                "category_name": "Toner / Nước Cân Bằng Da",
+                "brand": {
+                    "name": "Klairs",
+                    "off_online": false,
+                    "off_online_url": null,
+                    "url": "https://hasaki.vn/thuong-hieu/klairs.html",
+                    "image": "https://media.hcdn.vn//hsk/brandklairs-logo1779334979.jpg",
+                    "id": 2182,
+                    "followed": false,
+                    "following": null
+                },
+                "image": "https://media.hcdn.vn/catalog/product/p/r/special-deal-nuoc-hoa-hong-klairs-danh-cho-da-nhay-cam-180ml_edG6KsBaoibRuMUN.png",
+                "market_price": 435000,
+                "price": 232000,
+                "discount_percent": 47,
+                "promotion_text": null,
+                "promotion_badge": null,
+                "quantity": 6885,
+                "out_stock_text": null,
+                "bought_count": 98,
+                "gift": {
+                    "text": "Tặng: Mặt Nạ Klairs Làm Dịu Da & Kiểm Soát Dầu Nhờn 25ml (SL Có Hạn)",
+                    "image": "https://media.hcdn.vn/catalog/product/f/a/facebook-dynamic-nuoc-hoa-hong-klairs-khong-mui-cho-da-nhay-cam-30ml-1779345964.jpg",
+                    "image_38": "https://media.hcdn.vn/catalog/product/f/a/facebook-dynamic-nuoc-hoa-hong-klairs-khong-mui-cho-da-nhay-cam-30ml-1779345964_img_38x38_2b8932_fit_center.jpg",
+                    "image_80": "https://media.hcdn.vn/catalog/product/f/a/facebook-dynamic-nuoc-hoa-hong-klairs-khong-mui-cho-da-nhay-cam-30ml-1779345964_img_80x80_d200c5_fit_center.jpg"
+                },
+                "deal": {
+                    "deal_id": 12929,
+                    "quantity": 18,
+                    "bought_percent": 18,
+                    "start": 1779674400,
+                    "expired": 1779728399,
+                    "time_remain": 8784
+                },
+                "icon_delivery": null,
+                "spa": null,
+                "is_spa": false,
+                "rating": {
+                    "avgPercent": 96,
+                    "avg_rate": 4.8,
+                    "total_rate": 148
+                },
+                "category_id": 1857,
+                "sub_stamp": "https://media.hcdn.vn/catalog/product/t/e/tem-phu-nuoc-hoa-hong-klairs-danh-cho-da-nhay-cam-180ml-1759907128.jpg",
+                "icon_highlight_config": null
+            },
+            {
+                "id": 86165,
+                "sku": "253900005",
+                "name": "Nước Hoa Hồng Skin1004 Phục Hồi Và Tái Tạo Da 210ml",
+                "product_url": "https://hasaki.vn/san-pham/nuoc-hoa-hong-chiet-xuat-rau-ma-skin1004-ho-tro-phuc-hoi-tai-tao-da-210ml-86165.html",
+                "english_name": "Madagascar Centella Toning Toner",
+                "category_name": "Toner / Nước Cân Bằng Da",
+                "brand": {
+                    "name": "Skin1004",
+                    "off_online": false,
+                    "off_online_url": null,
+                    "url": "https://hasaki.vn/thuong-hieu/skin1004.html",
+                    "image": "https://media.hcdn.vn//hsk/brandSkin10041678681869.jpg",
+                    "id": 849,
+                    "followed": false,
+                    "following": null
+                },
+                "image": "https://media.hcdn.vn/catalog/product/f/a/facebook-dynamic-nuoc-hoa-hong-chiet-xuat-rau-ma-skin1004-ho-tro-phuc-hoi-tai-tao-da-210ml-1770272411.jpg",
+                "market_price": 480000,
+                "price": 336000,
+                "discount_percent": 30,
+                "promotion_text": null,
+                "promotion_badge": null,
+                "quantity": 1558,
+                "out_stock_text": null,
+                "bought_count": 47,
+                "gift": null,
+                "deal": {
+                    "deal_id": 9687,
+                    "quantity": 24,
+                    "bought_percent": 24,
+                    "start": 1749229200,
+                    "expired": 1779728399,
+                    "time_remain": 8784
+                },
+                "icon_delivery": null,
+                "spa": null,
+                "is_spa": false,
+                "rating": {
+                    "avgPercent": 98.00000000000001,
+                    "avg_rate": 4.9,
+                    "total_rate": 18
+                },
+                "category_id": 1857,
+                "sub_stamp": "https://media.hcdn.vn/catalog/product/t/e/tem-phu-nuoc-hoa-hong-chiet-xuat-rau-ma-skin1004-ho-tro-phuc-hoi-tai-tao-da-210ml-1764146694.jpg",
+                "icon_highlight_config": null
+            },
+            {
+                "id": 73481,
+                "sku": "345800001",
+                "name": "Nước Hoa Hồng Some By Mi AHA-BHA-PHA Cho Da Mụn 150ml",
+                "product_url": "https://hasaki.vn/san-pham/nuoc-hoa-hong-some-by-mi-cho-da-mun-150ml-73481.html",
+                "english_name": "Miracle Toner AHA-BHA-PHA 30 Days",
+                "category_name": "Toner / Nước Cân Bằng Da",
+                "brand": {
+                    "name": "Some By Mi",
+                    "off_online": false,
+                    "off_online_url": null,
+                    "url": "https://hasaki.vn/thuong-hieu/some-by-mi.html",
+                    "image": "https://media.hcdn.vn//hsk/brandsome-by-mi-logo1681267292.jpg",
+                    "id": 2371,
+                    "followed": false,
+                    "following": null
+                },
+                "image": "https://media.hcdn.vn/catalog/product/f/a/facebook-dynamic-nuoc-hoa-hong-some-by-mi-cho-da-mun-150ml-1711341846.jpg",
+                "market_price": 432000,
+                "price": 263000,
+                "discount_percent": 39,
+                "promotion_text": null,
+                "promotion_badge": null,
+                "quantity": 1485,
+                "out_stock_text": null,
+                "bought_count": 51,
+                "gift": null,
+                "deal": {
+                    "deal_id": 100,
+                    "quantity": 62,
+                    "bought_percent": 62,
+                    "start": 1595217600,
+                    "expired": 1779728399,
+                    "time_remain": 8784
+                },
+                "icon_delivery": null,
+                "spa": null,
+                "is_spa": false,
+                "rating": {
+                    "avgPercent": 98.00000000000001,
+                    "avg_rate": 4.9,
+                    "total_rate": 74
+                },
+                "category_id": 1857,
+                "sub_stamp": "https://media.hcdn.vn/catalog/product/t/e/tem-phu-nuoc-hoa-hong-some-by-mi-cho-da-mun-150ml-1661571642.jpg",
+                "icon_highlight_config": null
+            },
+            {
+                "id": 95005,
+                "sku": "422203798",
+                "name": "[Mini] Nước Hoa Hồng Klairs Không Mùi Cho Da Nhạy Cảm 30ml",
+                "product_url": "https://hasaki.vn/san-pham/nuoc-hoa-hong-klairs-khong-mui-cho-da-nhay-cam-30ml-95005.html",
+                "english_name": "Supple Preparation Unscented Toner",
+                "category_name": "Toner / Nước Cân Bằng Da",
+                "brand": {
+                    "name": "Klairs",
+                    "off_online": false,
+                    "off_online_url": null,
+                    "url": "https://hasaki.vn/thuong-hieu/klairs.html",
+                    "image": "https://media.hcdn.vn//hsk/brandklairs-logo1779334979.jpg",
+                    "id": 2182,
+                    "followed": false,
+                    "following": null
+                },
+                "image": "https://media.hcdn.vn/catalog/product/f/a/facebook-dynamic-nuoc-hoa-hong-klairs-khong-mui-cho-da-nhay-cam-30ml-1779345964.jpg",
+                "market_price": 135000,
+                "price": 59000,
+                "discount_percent": 56,
+                "promotion_text": null,
+                "promotion_badge": null,
+                "quantity": 23286,
+                "out_stock_text": null,
+                "bought_count": 163,
+                "gift": null,
+                "deal": {
+                    "deal_id": 8770,
+                    "quantity": 31,
+                    "bought_percent": 31,
+                    "start": 1739984400,
+                    "expired": 1779728399,
+                    "time_remain": 8784
+                },
+                "icon_delivery": null,
+                "spa": null,
+                "is_spa": false,
+                "rating": {
+                    "avgPercent": 0,
+                    "avg_rate": 0,
+                    "total_rate": 0
+                },
+                "category_id": 1857,
+                "sub_stamp": "https://media.hcdn.vn/catalog/product/t/e/tem-phu-nuoc-hoa-hong-klairs-khong-mui-cho-da-nhay-cam-30ml-1716971558.jpg",
+                "icon_highlight_config": null
+            },
+            {
+                "id": 20019,
+                "sku": "200400012",
+                "name": "Nước Hoa Hồng Bioderma Dành Cho Da Nhạy Cảm 250ml",
+                "product_url": "https://hasaki.vn/san-pham/nuoc-hoa-hong-bioderma-danh-cho-da-nhay-cam-250ml-20019.html",
+                "english_name": "Sensibio Tonique",
+                "category_name": "Toner / Nước Cân Bằng Da",
+                "brand": {
+                    "name": "Bioderma",
+                    "off_online": false,
+                    "off_online_url": null,
+                    "url": "https://hasaki.vn/thuong-hieu/bioderma.html",
+                    "image": "https://media.hcdn.vn//hsk/brandbiodermai-logo-400x2001745296534.jpg",
+                    "id": 28,
+                    "followed": false,
+                    "following": null
+                },
+                "image": "https://media.hcdn.vn/catalog/product/f/a/facebook-dynamic-nuoc-hoa-hong-bioderma-danh-cho-da-nhay-cam-250ml-1761558174.jpg",
+                "market_price": 465000,
+                "price": 381000,
+                "discount_percent": 18,
+                "promotion_text": null,
+                "promotion_badge": null,
+                "quantity": 1593,
+                "out_stock_text": null,
+                "bought_count": 23,
+                "gift": null,
+                "deal": {
+                    "deal_id": 2915,
+                    "quantity": 62,
+                    "bought_percent": 62,
+                    "start": 1597078800,
+                    "expired": 1779728399,
+                    "time_remain": 8784
+                },
+                "icon_delivery": null,
+                "spa": null,
+                "is_spa": false,
+                "rating": {
+                    "avgPercent": 100,
+                    "avg_rate": 5,
+                    "total_rate": 4
+                },
+                "category_id": 1857,
+                "sub_stamp": "https://media.hcdn.vn/catalog/product/t/e/tem-phu_200400012-1690540297.jpg",
+                "icon_highlight_config": null
+            },
+            {
+                "id": 103123,
+                "sku": "422209046",
+                "name": "Nước Hoa Hồng Swiss Image Cho Da Hỗn Hợp Và Da Dầu 200ml",
+                "product_url": "https://hasaki.vn/san-pham/nuoc-hoa-hong-swiss-image-cho-da-hon-hop-va-da-dau-200ml-103123.html",
+                "english_name": "Refreshing & Mattifying Toner ",
+                "category_name": "Toner / Nước Cân Bằng Da",
+                "brand": {
+                    "name": "Swiss Image",
+                    "off_online": false,
+                    "off_online_url": null,
+                    "url": "https://hasaki.vn/thuong-hieu/swiss-image.html",
+                    "image": "https://media.hcdn.vn/brand/166131317901.jpg",
+                    "id": 3327,
+                    "followed": false,
+                    "following": null
+                },
+                "image": "https://media.hcdn.vn/catalog/product/p/r/promotions-auto-nuoc-hoa-hong-swiss-image-cho-da-hon-hop-va-da-dau-200ml_rnjmCjFnKtSsYSRK.png",
+                "market_price": 400000,
+                "price": 320000,
+                "discount_percent": 20,
+                "promotion_text": "Bill 499K SWISS IMAGE tặng Bông tẩy trang Hotosu 150 miếng (SL có hạn)",
+                "promotion_badge": null,
+                "quantity": 2795,
+                "out_stock_text": null,
+                "bought_count": 16,
+                "gift": null,
+                "deal": {
+                    "deal_id": 100,
+                    "quantity": 62,
+                    "bought_percent": 62,
+                    "start": 1595217600,
+                    "expired": 1779728399,
+                    "time_remain": 8784
+                },
+                "icon_delivery": null,
+                "spa": null,
+                "is_spa": false,
+                "rating": {
+                    "avgPercent": 98.00000000000001,
+                    "avg_rate": 4.9,
+                    "total_rate": 16
+                },
+                "category_id": 1857,
+                "sub_stamp": "https://media.hcdn.vn/catalog/product/t/e/tem-phu-nuoc-hoa-hong-swiss-image-cho-da-hon-hop-va-da-dau-200ml-1696405119.jpg",
+                "icon_highlight_config": null
+            },
+            {
+                "id": 195317,
+                "sku": "422269665",
+                "name": "Combo 2 Nước Hoa Hồng Simple Làm Dịu Da & Cấp Ẩm 200ml",
+                "product_url": "https://hasaki.vn/san-pham/combo-2-nuoc-hoa-hong-simple-lam-diu-da-cap-am-200ml-195317.html",
+                "english_name": "Kind to Skin Soothing Facial Toner",
+                "category_name": "Toner / Nước Cân Bằng Da",
+                "brand": {
+                    "name": "Simple",
+                    "off_online": false,
+                    "off_online_url": null,
+                    "url": "https://hasaki.vn/thuong-hieu/simple.html",
+                    "image": "https://media.hcdn.vn//hsk/brandbrandsimple-logo1763966500.jpg",
+                    "id": 149,
+                    "followed": false,
+                    "following": null
+                },
+                "image": "https://media.hcdn.vn/catalog/product/f/a/facebook-dynamic-combo-2-nuoc-hoa-hong-simple-lam-diu-da-cap-am-200ml-1764917742.jpg",
+                "market_price": 360000,
+                "price": 218000,
+                "discount_percent": 39,
+                "promotion_text": null,
+                "promotion_badge": null,
+                "quantity": 2107,
+                "out_stock_text": null,
+                "bought_count": 21,
+                "gift": null,
+                "deal": {
+                    "deal_id": 2915,
+                    "quantity": 62,
+                    "bought_percent": 62,
+                    "start": 1597078800,
+                    "expired": 1779728399,
+                    "time_remain": 8784
+                },
+                "icon_delivery": null,
+                "spa": null,
+                "is_spa": false,
+                "rating": {
+                    "avgPercent": 98.00000000000001,
+                    "avg_rate": 4.9,
+                    "total_rate": 76
+                },
+                "category_id": 1857,
+                "sub_stamp": "https://media.hcdn.vn/catalog/product/t/e/tem-phu-combo-2-nuoc-hoa-hong-simple-lam-diu-da-cap-am-200ml-1747896806.jpg",
+                "icon_highlight_config": null
+            }
+        ]
+    }
+}

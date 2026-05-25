@@ -1,0 +1,9 @@
+RESPONSE:
+{
+    "status": {
+        "error_code": 1,
+        "error_message": "user name is empty !",
+        "alert_message": "Tên đăng nhập không được rỗng !"
+    },
+    "data": null
+}

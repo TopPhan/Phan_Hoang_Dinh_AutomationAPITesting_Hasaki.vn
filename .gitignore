@@ -3,7 +3,6 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 
 # Allure output (generated, not committed)
-allure-results/
 allure-report/
 
 # IntelliJ IDEA (entire folder)

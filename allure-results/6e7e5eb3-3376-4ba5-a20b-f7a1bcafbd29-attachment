@@ -1,0 +1,49 @@
+RESPONSE:
+{
+    "status": {
+        "error_code": 0,
+        "error_message": "",
+        "alert_message": ""
+    },
+    "data": {
+        "meta_data": {
+            "products_total": 0,
+            "current_cate": [
+                
+            ],
+            "is_spa": false,
+            "log": {
+                "usrId": "daaf2794-28c0-469d-b135-592ae646736e",
+                "total": 0,
+                "limit": 40,
+                "srt": 0,
+                "lstId": "9ea27f7e-a229-54d0-8ff0-e92e5c139f65"
+            },
+            "sort_params": [
+                {
+                    "label": "Mới nhất",
+                    "value": "position",
+                    "selected": false
+                },
+                {
+                    "label": "Bán chạy",
+                    "value": "topsale",
+                    "selected": true
+                },
+                {
+                    "label": "Giá thấp đến cao",
+                    "value": "price_asc",
+                    "selected": false
+                },
+                {
+                    "label": "Giá cao đến thấp",
+                    "value": "price_desc",
+                    "selected": false
+                }
+            ]
+        },
+        "is_redirect": false,
+        "url_redirect": "",
+        "products": null
+    }
+}
