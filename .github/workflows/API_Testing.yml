@@ -40,12 +40,12 @@ jobs:
         env:
           API_USERNAME: ${{ secrets.CHROME_USER }}
           API_PASSWORD: ${{ secrets.CHROME_PASS }}
-          TARGET_ENV:   ${{ github.event.inputs.env || 'staging' }}
+          TARGET_ENV:   ${{ github.event.inputs.env || 'dev' }}
         run: |
           python3 - << 'PYEOF'
           import os
 
-          env      = os.environ.get("TARGET_ENV", "staging").lower()
+          env      = os.environ.get("TARGET_ENV", "dev").lower()
           username = os.environ["API_USERNAME"]
           password = os.environ["API_PASSWORD"]
 
@@ -92,7 +92,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: api-test-artifacts-${{ github.event.inputs.env || 'staging' }}
+          name: api-test-artifacts-${{ github.event.inputs.env || 'dev' }}
           path: |
             target/surefire-reports/
             allure-results/
