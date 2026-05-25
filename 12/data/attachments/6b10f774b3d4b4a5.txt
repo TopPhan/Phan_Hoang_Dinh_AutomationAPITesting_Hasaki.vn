@@ -1,0 +1,1 @@
+PASS: TC_F05_BrandFilterMustExist

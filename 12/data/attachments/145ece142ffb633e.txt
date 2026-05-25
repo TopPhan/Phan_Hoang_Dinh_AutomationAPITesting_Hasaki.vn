@@ -1,0 +1,12 @@
+RESPONSE:
+{
+    "status": {
+        "error_code": 0,
+        "error_message": "success",
+        "alert_message": "Sản Phẩm đã được thêm vào giỏ hàng thành công"
+    },
+    "data": {
+        "cart_id": 17689010604702,
+        "products_total": 43
+    }
+}

@@ -1,0 +1,1 @@
+PASS: TC_C08_EmptyBody

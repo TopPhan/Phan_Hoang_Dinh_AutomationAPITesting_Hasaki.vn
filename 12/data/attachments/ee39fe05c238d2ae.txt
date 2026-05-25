@@ -1,0 +1,9 @@
+RESPONSE:
+{
+    "status": {
+        "error_code": 2,
+        "error_message": "passsword is empty",
+        "alert_message": "Mật khẩu không được rỗng !"
+    },
+    "data": null
+}

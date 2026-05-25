@@ -1,0 +1,9 @@
+RESPONSE:
+{
+    "status": {
+        "error_code": 1,
+        "error_message": "product info is not empty",
+        "alert_message": "Đã xảy ra lỗi, vui lòng kiểm tra lại"
+    },
+    "data": null
+}
