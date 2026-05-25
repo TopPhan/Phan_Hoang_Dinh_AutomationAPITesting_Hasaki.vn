@@ -10,7 +10,7 @@ on:
       suite:
         description: 'Suite XML (VD: SuiteSmoke.xml / SuiteFull.xml)'
         required: false
-        default: 'SuiteSmoke.xml'
+        default: 'SuiteFull.xml'
       env:
         description: 'Môi trường chạy test (dev / staging / prod)'
         required: false
@@ -81,7 +81,7 @@ jobs:
       # ── Chạy test suite với đúng env ──────────────────────────────────────
       - name: Run API Tests
         run: |
-          SUITE="${{ github.event.inputs.suite || 'SuiteDataDriven.xml' }}"
+          SUITE="${{ github.event.inputs.suite || 'SuiteFull.xml' }}"
           ENV="${{ github.event.inputs.env || 'dev' }}"
           echo "Suite : $SUITE"
           echo "Env   : $ENV"
