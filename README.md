@@ -1,20 +1,17 @@
 ![Java](https://img.shields.io/badge/Java-21-orange?style=flat-square&logo=java)
-![REST Assured](https://img.shields.io/badge/REST--Assured-5.5.6-brightgreen?style=flat-square)
-![TestNG](https://img.shields.io/badge/TestNG-7.12.0-red?style=flat-square)
+![REST Assured](https://img.shields.io/badge/REST--Assured-5.x-green?style=flat-square&logo=java)
+![TestNG](https://img.shields.io/badge/TestNG-7.x-red?style=flat-square)
 ![Maven](https://img.shields.io/badge/Maven-Project-blue?style=flat-square&logo=apache-maven) <br>
-![API Testing](https://github.com/TopPhan/Phan_Hoang_Dinh_AutomationTesting_Hasaki.vn/actions/workflows/API_Testing.yml/badge.svg)
+![API Testing](https://github.com/TopPhan/Hasaki.vn_API_Testing/actions/workflows/API_Testing.yml/badge.svg)
 
 # 🌿 [Hasaki.vn](https://hasaki.vn/) — API Testing Framework
 
 <!-- PROJECT SCREENSHOT PLACEHOLDER -->
-<!-- <img width="1911" height="866" alt="image" src="YOUR_SCREENSHOT_URL" /> -->
+> 📌 *Screenshot of the project / Allure Report will be added after GitHub Actions setup.*
 
 ---
 
-[![Allure Report](https://img.shields.io/badge/Allure%20Report-View%20Here-ff69b4?style=for-the-badge&logo=allure)](https://TopPhan.github.io/Phan_Hoang_Dinh_API_Testing_Hasaki.vn/)
-
-<!-- ALLURE REPORT SCREENSHOTS PLACEHOLDER -->
-<!-- <img width="1919" height="872" alt="image" src="YOUR_ALLURE_SCREENSHOT_URL" /> -->
+[![Allure Report](https://img.shields.io/badge/Allure%20Report-View%20Here-ff69b4?style=for-the-badge&logo=allure)](https://TopPhan.github.io/Hasaki.vn_API_Testing/)
 
 ---
 
@@ -25,11 +22,12 @@
 - [Project Structure](#-project-structure)
 - [Architecture & Flow Diagrams](#-architecture--flow-diagrams)
 - [Key Technologies Explained](#-key-technologies-explained)
+- [API Endpoints Under Test](#-api-endpoints-under-test)
 - [Test Suites & Coverage](#-test-suites--coverage)
 - [Data-Driven Testing](#-data-driven-testing)
 - [Multi-Environment Support](#-multi-environment-support)
-- [Security — Credential Management](#-security--credential-management)
-- [Configuration & How to Run](#%EF%B8%8F-configuration--how-to-run-the-project)
+- [Security — GitHub Secrets](#-security--credential-management)
+- [How to Run](#-how-to-run-the-project)
 - [Allure Report](#-allure-report)
 - [CI/CD Pipeline](#%EF%B8%8F-cicd-pipeline--github-actions)
 
@@ -37,29 +35,46 @@
 
 ## 🌿 Project Overview
 
-**Hasaki.vn API Testing** là framework kiểm thử API production-grade nhắm vào hệ thống backend của [Hasaki.vn](https://hasaki.vn/) — nền tảng thương mại điện tử mỹ phẩm & chăm sóc da hàng đầu Việt Nam.  
-Xây dựng với **REST Assured**, **TestNG**, và kiến trúc **Keyword-Driven + Data-Driven**, framework kiểm thử toàn bộ luồng API từ Authentication, Search, Filter đến Cart management — với Allure Report tự động deploy lên GitHub Pages sau mỗi CI run.
+**Hasaki.vn API Testing** is a production-grade REST API test automation framework targeting the backend APIs of [Hasaki.vn](https://hasaki.vn/) — Vietnam's leading beauty & skincare e-commerce platform.  
+Built with **REST-Assured**, **TestNG**, and a layered keyword-driven architecture, this framework validates the full API surface across Authentication, Search, Filter, and Cart operations — covering positive, negative, security, schema, performance, and end-to-end scenarios — with automated Allure reporting deployed to GitHub Pages on every CI run.
 
 | Metric | Result |
 |---|---|
-| 🧪 Tổng số Test Cases | **82 tests** (Positive · Negative · Security · Schema · Performance) |
-| 🔗 Endpoints được bao phủ | **6 endpoints** (Login · Search · Filter · Add/Update/Delete Cart) |
-| 🌐 Multi-Environment | **Dev · Staging · Production** — chuyển môi trường bằng `-Denv` |
-| 📈 Allure Report | Auto-deploy lên **GitHub Pages** — giữ lại 20 lần chạy gần nhất |
+| 🧪 Total Test Cases | **90 tests** (Smoke · Regression · Negative · Security · Performance · E2E) |
+| 🔗 API Endpoints Covered | **6 endpoints** across 3 feature domains |
+| 🌍 Environments | **dev · staging · prod** (switchable via `-Denv`) |
+| 📈 Allure Report | Auto-deployed to **GitHub Pages** — keeps last 20 runs |
 | 🤖 CI Platform | **GitHub Actions (Ubuntu Latest)** |
-| 🔐 Credential Security | **GitHub Secrets** — không hardcode credentials trong source code |
-| 🔄 Retry Mechanism | **RetryAnalyzer** — tự động retry test flaky tối đa 2 lần |
+| 🔐 Credential Security | **GitHub Secrets** — zero hardcoded credentials in source |
+| 🔁 Flaky Test Resilience | **RetryAnalyzer** — auto-retries up to 2 times on network/session failures |
 
 ### 🌟 Key Strengths
 
-- **Keyword-Driven Design** — `ApiKeyword` bọc REST Assured thành các method ngắn gọn (`get`, `post`, `put`, `delete`), test case đọc như tài liệu nghiệp vụ, không lộ HTTP plumbing.
-- **Centralized Validation** — `ResponseValidator` tập trung toàn bộ assertion logic. Khi response contract thay đổi, chỉ cần sửa 1 chỗ thay vì cập nhật từng test file.
-- **Multi-Environment** — `EnvConfig` load đúng file config theo `-Denv` (dev / staging / prod). Chuyển môi trường chỉ cần 1 flag, không sửa code.
-- **Data-Driven Testing** — Test data externalize ra JSON theo từng feature (valid / invalid data), kết hợp `GsonDataProvider` và `@DataProvider` của TestNG cho phép mở rộng test case mà không thay đổi logic.
-- **JSON Schema Validation** — Mỗi endpoint có file `.json` Schema riêng, đảm bảo response contract không bị phá vỡ giữa các phiên bản API.
-- **Live Allure Reporting** — Mỗi CI run tự công bố báo cáo tương tác lên GitHub Pages với lịch sử 20 lần chạy.
-- **Secure Credential Management** — Credentials được inject vào file `.properties` đúng môi trường tại runtime bằng Python; không có thông tin nhạy cảm nào được commit vào source.
-- **Auto Retry on Flaky Tests** — `RetryAnalyzer` + `RetryListener` tự động retry test thất bại tối đa 2 lần trước khi báo cáo fail thực sự.
+- **Layered keyword architecture** — `ApiKeyword` wraps all REST-Assured verbs; tests stay clean and readable without any HTTP boilerplate.
+- **Centralized response validation** — `ResponseValidator` owns all assertions (HTTP status, Hasaki `error_code`, field presence, field values). Update once; all tests benefit.
+- **JSON Schema validation** — Response contracts enforced via REST-Assured's JSON Schema Validator, catching silent API breaking changes automatically.
+- **Data-driven testing** — All test data externalized to JSON files via `GsonDataProvider`, enabling scenario expansion without any code changes.
+- **Smart session management** — `BaseTest` handles the complex Hasaki auth flow (`form_key` + `HSKSIGN` + `HASAKI_SESSID` + `verify_token`) transparently. Downstream tests never deal with auth plumbing.
+- **Multi-environment config** — Switch between `dev`, `staging`, and `prod` with a single `-Denv` flag. Credential injection at runtime from GitHub Secrets — no sensitive data in source.
+- **Auto retry on flakiness** — `RetryAnalyzer` + `RetryListener` automatically retry failing tests caused by network or session timeouts (max 2 retries), distinguishing environment errors from logic failures.
+- **Live Allure reporting** — Every CI run auto-publishes an interactive report to GitHub Pages with step breakdowns, response logs, and 20-run trend history.
+
+---
+
+## 🛠️ Technology Stack
+
+| Category | Technology | Version |
+|---|---|---|
+| Language | Java | 21 |
+| HTTP Client / Test DSL | REST-Assured | 5.x |
+| Test Runner | TestNG | 7.x |
+| Build Tool | Maven | 3.x |
+| Serialization | Gson | 2.13.1 |
+| POJO Boilerplate | Lombok | 1.18.42 |
+| Test Data Generation | DataFaker | 2.5.3 |
+| Logging | Log4j2 + SLF4J | 2.25.4 / 2.0.17 |
+| Reporting | Allure TestNG + Allure REST-Assured | 2.x |
+| CI/CD | GitHub Actions | ubuntu-latest |
 
 ---
 
@@ -69,97 +84,87 @@ Xây dựng với **REST Assured**, **TestNG**, và kiến trúc **Keyword-Drive
 Hasaki.vn_API_Testing/
 ├── .github/
 │   └── workflows/
-│       └── API_Testing.yml              # GitHub Actions CI pipeline
+│       └── API_Testing.yml              # GitHub Actions CI/CD pipeline
 │
 ├── src/
 │   ├── main/
 │   │   ├── java/com/
 │   │   │   ├── globals/
-│   │   │   │   ├── ConfigsGlobal.java   # Central config holder (BASE_URI, credentials...)
+│   │   │   │   ├── ConfigsGlobal.java   # Runtime config values loaded from EnvConfig
 │   │   │   │   ├── EndPointGlobal.java  # All API endpoint constants
-│   │   │   │   ├── EnvConfig.java       # Multi-env loader (-Denv=dev/staging/prod)
-│   │   │   │   └── TokenGlobal.java     # Global token storage (verify_token, cookies)
+│   │   │   │   ├── EnvConfig.java       # Multi-env config loader (-Denv=dev/staging/prod)
+│   │   │   │   └── TokenGlobal.java     # Global session state (cookies, tokens)
 │   │   │   ├── helper/
-│   │   │   │   ├── GsonDataProvider.java  # JSON → TestNG @DataProvider bridge
-│   │   │   │   ├── JsonHelper.java        # JSON read/write utilities
-│   │   │   │   ├── LogUtils.java          # Log4j2 wrapper
-│   │   │   │   ├── PropertiesHelper.java  # .properties file reader
-│   │   │   │   ├── SchemaHelper.java      # JSON Schema loader helper
-│   │   │   │   └── SystemHelper.java      # System/OS utilities
+│   │   │   │   ├── GsonDataProvider.java # JSON → Object[][] DataProvider engine
+│   │   │   │   ├── JsonHelper.java       # JSON read/write utilities
+│   │   │   │   ├── LogUtils.java         # Log4j2 logger wrapper
+│   │   │   │   ├── PropertiesHelper.java # .properties file reader
+│   │   │   │   ├── SchemaHelper.java     # JSON Schema loader
+│   │   │   │   └── SystemHelper.java     # JVM/OS system utilities
 │   │   │   ├── keywords/
-│   │   │   │   ├── ApiKeyword.java        # Core HTTP methods (get, post, put, delete)
-│   │   │   │   ├── GetSection.java        # Reusable GET response extraction
-│   │   │   │   └── SpecBuilder.java       # REST Assured RequestSpec / ResponseSpec builder
+│   │   │   │   ├── ApiKeyword.java       # Core HTTP verbs (GET, POST, PUT, DELETE)
+│   │   │   │   ├── GetSection.java       # Session bootstrap (getCookies, form_key)
+│   │   │   │   └── SpecBuilder.java      # REST-Assured request/response spec factory
 │   │   │   ├── listener/
-│   │   │   │   ├── RetryAnalyzer.java     # Flaky test retry logic (max 2 retries)
-│   │   │   │   ├── RetryListener.java     # Wires RetryAnalyzer to all tests
-│   │   │   │   └── TestListener.java      # Allure environment, log, summary on finish
+│   │   │   │   ├── RetryAnalyzer.java    # Flaky-test retry logic (max 2 retries)
+│   │   │   │   ├── RetryListener.java    # Auto-applies RetryAnalyzer to all suite tests
+│   │   │   │   └── TestListener.java     # Allure environment info + test lifecycle logging
 │   │   │   ├── reports/
-│   │   │   │   └── AllureManager.java     # Allure attachment helpers
+│   │   │   │   └── AllureManager.java    # Allure step/log helper
 │   │   │   └── validator/
-│   │   │       └── ResponseValidator.java # Centralized assertion engine
+│   │   │       └── ResponseValidator.java # Central assertion engine for all API responses
 │   │   └── resources/
 │   │       ├── log4j2.properties
-│   │       └── TutorialUse/               # Developer reference docs for helpers
+│   │       └── TutorialUse/             # Usage guides for GsonDataProvider & JsonHelper
 │   │
 │   └── test/
 │       └── java/com/
 │           ├── baseSetup/
-│           │   └── BaseTest.java          # Suite-level setup: login once, share token
+│           │   └── BaseTest.java         # Suite-level auth setup & per-class session refresh
 │           ├── builder/
-│           │   └── LoginPOJO_Builder.java # Builder pattern for login request body
+│           │   └── LoginPOJO_Builder.java # Builds login request body from config
 │           ├── pojoModel/
 │           │   ├── AddToCartModel.java
 │           │   ├── DeleteCartModel.java
 │           │   ├── LoginModel.java
 │           │   └── UpdateCartModel.java
 │           ├── testScenarios/
-│           │   ├── LoginTest.java         # 8 tests — Authentication
-│           │   ├── SearchTest.java        # 14 tests — Search API
-│           │   ├── FilterTest.java        # 14 tests — Filter/Browse API
+│           │   ├── LoginTest.java         # 8 tests  — Authentication
+│           │   ├── SearchTest.java        # 14 tests — Product Search
+│           │   ├── FilterTest.java        # 14 tests — Product Filter
 │           │   ├── AddToCartTest.java     # 13 tests — Add to Cart
-│           │   ├── UpdateCartTest.java    # 17 tests — Update Cart quantity
-│           │   └── DeleteItemInCartTest.java # 16 tests — Delete Cart item
+│           │   ├── UpdateCartTest.java    # 17 tests — Update Cart
+│           │   └── DeleteItemInCartTest.java # 16 tests — Delete from Cart
 │           └── dataProvider/
-│               └── DataProviders.java     # All @DataProvider methods
+│               └── DataProviders.java     # All @DataProvider methods (JSON-driven)
 │
-├── src/test/resources/
-│   ├── configs/
-│   │   ├── dev.properties               # Local dev environment
-│   │   ├── staging.properties           # Staging / UAT environment
-│   │   └── prod.properties              # Production environment
-│   ├── jsonData/
-│   │   ├── Login.json                   # Valid login credentials
-│   │   ├── LoginInvalidData.json        # Negative login scenarios
-│   │   ├── SearchData.json              # Valid search keywords
-│   │   ├── SearchInvalidData.json       # Edge-case search keywords
-│   │   ├── FilterData.json              # Valid filter params
-│   │   ├── AddToCartData.json           # Valid add-to-cart payloads
-│   │   ├── AddToCartInvalidData.json    # Invalid add-to-cart payloads
-│   │   ├── UpdateCartData.json          # Valid update-cart payloads
-│   │   ├── UpdateCartInvalidData.json   # Invalid update-cart payloads
-│   │   ├── DeleteCartData.json          # Valid delete-cart payloads
-│   │   └── DeleteCartInvalidData.json   # Invalid delete-cart payloads
-│   ├── jsonSchema/
-│   │   ├── LoginSchema.json             # Login response contract
-│   │   ├── SearchSchema.json            # Search response contract
-│   │   ├── FilterSchema.json            # Filter response contract
-│   │   └── AddToCartSchema.json         # Add-to-cart response contract
-│   └── suites/
-│       ├── SuiteSmoke.xml               # ~2–3 min — BLOCKER/CRITICAL checks
-│       ├── SuiteSanity.xml              # Core positive scenarios
-│       ├── SuiteRegression.xml          # Full regression
-│       ├── SuiteFull.xml                # All test groups
-│       ├── SuiteNegative.xml            # Negative & edge cases only
-│       ├── SuitePerformance.xml         # Response time thresholds
-│       ├── SuiteSecurity.xml            # CSRF, auth bypass, brute-force
-│       ├── SuiteDataDriven.xml          # Data-driven scenarios
-│       └── SuiteEndToEnd.xml            # Full user journey (Login → Cart)
-│
-├── allure-results/
-├── logs/
-├── pom.xml
-└── .gitignore
+└── src/test/resources/
+    ├── configs/
+    │   ├── dev.properties
+    │   ├── staging.properties
+    │   └── prod.properties
+    ├── jsonData/                          # Test input data (valid & invalid)
+    │   ├── Login.json / LoginInvalidData.json
+    │   ├── SearchData.json / SearchInvalidData.json
+    │   ├── FilterData.json
+    │   ├── AddToCartData.json / AddToCartInvalidData.json
+    │   ├── UpdateCartData.json / UpdateCartInvalidData.json
+    │   └── DeleteCartData.json / DeleteCartInvalidData.json
+    ├── jsonSchema/                        # JSON Schema contracts
+    │   ├── LoginSchema.json
+    │   ├── SearchSchema.json
+    │   ├── FilterSchema.json
+    │   └── AddToCartSchema.json
+    └── suites/
+        ├── SuiteSmoke.xml
+        ├── SuiteRegression.xml
+        ├── SuiteNegative.xml
+        ├── SuiteSecurity.xml
+        ├── SuitePerformance.xml
+        ├── SuiteDataDriven.xml
+        ├── SuiteSanity.xml
+        ├── SuiteEndToEnd.xml
+        └── SuiteFull.xml
 ```
 
 ---
@@ -169,479 +174,389 @@ Hasaki.vn_API_Testing/
 ### Keyword-Driven API Testing Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                      TEST SCENARIO LAYER                        │
-│  LoginTest │ SearchTest │ FilterTest │ AddToCartTest │ ...       │
-└────────────────────────┬────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────┐
+│                    TEST SCENARIO LAYER                  │
+│  LoginTest │ SearchTest │ FilterTest │ Cart Tests ...   │
+└────────────────────────┬────────────────────────────────┘
                          │ calls
-┌────────────────────────▼────────────────────────────────────────┐
-│                       KEYWORD LAYER                             │
-│         ApiKeyword.get() │ .post() │ .put() │ .delete()         │
-└────────────────────────┬────────────────────────────────────────┘
-                         │ validates with
-┌────────────────────────▼────────────────────────────────────────┐
-│                     VALIDATION LAYER                            │
-│   ResponseValidator.assertHasakiSuccess() │ assertErrorCode()   │
-│   assertFieldEquals() │ assertSchema() │ assertResponseTime()    │
-└────────────────────────┬────────────────────────────────────────┘
-                         │ built by
-┌────────────────────────▼────────────────────────────────────────┐
-│                    SPEC / CONFIG LAYER                          │
-│   SpecBuilder (RequestSpec + ResponseSpec) │ ConfigsGlobal      │
-│   EnvConfig (dev / staging / prod)        │ TokenGlobal         │
-└────────────────────────┬────────────────────────────────────────┘
-                         │ sends HTTP to
-┌────────────────────────▼────────────────────────────────────────┐
-│                    REST ASSURED ENGINE                          │
-│              Hasaki.vn Mobile API Backend                       │
-└─────────────────────────────────────────────────────────────────┘
+┌────────────────────────▼────────────────────────────────┐
+│                  KEYWORD / VALIDATOR LAYER              │
+│  ApiKeyword │ ResponseValidator │ GetSection            │
+└────────────────────────┬────────────────────────────────┘
+                         │ uses
+┌────────────────────────▼────────────────────────────────┐
+│                    SPEC / GLOBAL LAYER                  │
+│  SpecBuilder │ ConfigsGlobal │ TokenGlobal              │
+└────────────────────────┬────────────────────────────────┘
+                         │ drives
+┌────────────────────────▼────────────────────────────────┐
+│              REST-ASSURED HTTP CLIENT LAYER             │
+│           hasaki.vn Live API (staging / prod)           │
+└─────────────────────────────────────────────────────────┘
+```
+
+### Session Management Flow (BaseTest)
+
+```
+  Suite Start (@BeforeSuite)
+        │
+        ▼
+  GetSection.getCookies()              ← Fetch form_key + HSKSIGN
+        │
+        ▼
+  ApiKeyword.post(EP_LOGIN, body)      ← Authenticate
+        │
+        ▼
+  errorCode == 0?
+    ├── YES → mergeCookies()           ← Store HASAKI_SESSID
+    │         extractPostLoginTokens() ← Store VERIFY_TOKEN, HSKSIGN
+    │
+    └── NO  → LogUtils.error()
+
+  Per Class (@BeforeClass)
+        │
+        ▼
+  GetSection.getCookies()              ← Refresh short-lived form_key + HSKSIGN
+        │
+        ▼
+  Has HASAKI_SESSID + VERIFY_TOKEN?
+    ├── YES → Use existing session     ← Avoid device-verify trigger
+    └── NO  → Re-login fallback
 ```
 
 ### CI/CD Pipeline Flow
 
 ```
-  Push to master / PR / Manual Dispatch (chọn suite + env)
+  Push to master / PR / Manual Dispatch
               │
               ▼
       ┌───────────────────┐
-      │  Checkout Code    │  (~20s)
+      │  Checkout Code    │
       └────────┬──────────┘
                │
       ┌────────▼──────────┐
-      │  Set up JDK 21    │  (~2s)
+      │  Set up JDK 21    │
       └────────┬──────────┘
                │
       ┌────────▼──────────────────────────────┐
-      │  Inject Credentials into env config   │
+      │  Inject Credentials (Python3)          │
       │  GitHub Secrets → {env}.properties    │
-      │  API_USERNAME / API_PASSWORD          │
-      └────────┬──────────────────────────────┘
+      │  USERNAME / PASSWORD                   │
+      └────────┬───────────────────────────────┘
                │
-      ┌────────▼──────────────────────────────┐
-      │  Run API Tests                        │  (~3–5 min)
-      │  mvn clean test -Denv=staging         │
-      │         -Dsuite.file=SuiteSmoke.xml   │
-      └────────┬──────────────────────────────┘
+      ┌────────▼────────────────────────┐
+      │  Run Maven Tests                │
+      │  -Denv={env}                    │
+      │  -Dsuite.file=suites/{suite}    │
+      └────────┬────────────────────────┘
                │
-      ┌────────▼──────────────────────────────┐
-      │  Upload Artifacts                     │
-      │  surefire-reports · allure-results    │
-      │  logs/                                │
-      └────────┬──────────────────────────────┘
+      ┌────────▼────────────────────────┐
+      │  Upload Artifacts               │
+      │  surefire-reports/              │
+      │  allure-results/ · logs/        │
+      └────────┬────────────────────────┘
                │
-      ┌────────▼──────────────────────────────┐
-      │  Generate Allure Report               │
-      │  (keeps last 20 runs history)         │
-      └────────┬──────────────────────────────┘
+      ┌────────▼────────────────────────┐
+      │  Generate Allure Report         │
+      │  (keep last 20 runs)            │
+      └────────┬────────────────────────┘
                │
-      ┌────────▼──────────────────────────────┐
-      │  Deploy to GitHub Pages               │
-      │  (gh-pages branch)                    │
-      └───────────────────────────────────────┘
-               │
-      ✅ Report live at TopPhan.github.io/...
+      ┌────────▼────────────────────────┐
+      │  Deploy to GitHub Pages         │
+      │  → gh-pages branch              │
+      └─────────────────────────────────┘
 ```
-
-### E2E User Journey Flow
-
-```
-  [Suite Setup — BaseTest.suiteSetup()]
-  POST /login → Lưu VERIFY_TOKEN + COOKIES vào TokenGlobal
-        │
-        ▼
-  [Authentication Tests — LoginTest]
-  Valid login · Negative (wrong/empty creds) · Security · Schema · Performance
-        │
-        ▼
-  [Search Tests — SearchTest]
-  Keyword search · Empty keyword · Special characters · Schema validation
-        │
-        ▼
-  [Filter Tests — FilterTest]
-  Filter by category/price · Invalid params · Schema validation
-        │
-        ▼
-  [Cart Tests — AddToCartTest]
-  Add product · Invalid product ID · Missing token · Schema validation
-        │
-        ▼
-  [Update Cart Tests — UpdateCartTest]
-  Update quantity · Boundary values (0, negative, max) · Negative scenarios
-        │
-        ▼
-  [Delete Cart Tests — DeleteItemInCartTest]
-  Delete item · Delete non-existent · Verify cart state after delete
-        │
-        ▼
-  [Assertion]
-  ✅ HTTP status codes correct
-  ✅ Business error_code matches expected
-  ✅ Response schema validated against JSON contract
-  ✅ Response time within threshold
-```
-
----
-
-## 🛠️ Technology Stack
-
-| Tool | Version | Purpose |
-|---|---|---|
-| Java | 21 (Temurin) | Ngôn ngữ chính |
-| REST Assured | 5.5.6 | HTTP client & API assertion |
-| TestNG | 7.12.0 | Test runner, `@DataProvider`, listeners |
-| Gson | 2.13.1 | JSON serialization / deserialization |
-| Lombok | 1.18.42 | Giảm boilerplate (Builder, Getter/Setter) |
-| DataFaker | 2.5.3 | Sinh test data ngẫu nhiên |
-| Log4j2 | 2.25.4 | Structured logging |
-| Allure TestNG | 2.27.0 | Interactive test reporting |
-| Allure REST Assured | 2.25.0 | Auto-attach HTTP request/response vào Allure |
-| Maven | 3.x | Build & dependency management |
-| GitHub Actions | ubuntu-latest | CI/CD pipeline |
 
 ---
 
 ## 🔬 Key Technologies Explained
 
-### REST Assured 5.5.6
-HTTP client mạnh mẽ cho API testing với DSL đọc như văn xuôi. Tích hợp sẵn JSON Schema validation và filter cho Allure — mọi request/response tự động đính kèm vào test report mà không cần viết thêm code.
+### REST-Assured 5.x
+Core HTTP client and test DSL. `ApiKeyword.java` wraps all verbs (`GET`, `POST`, `PUT`, `DELETE`) with Allure `@Step` annotations, LogUtils logging, and the shared `SpecBuilder` — so every test call is one line of code, not a dozen lines of configuration.
 
-### ApiKeyword — Keyword-Driven Layer
-Bọc REST Assured thành các method ngắn gọn (`get`, `post`, `put`, `delete`). Test case không cần biết `given/when/then` — chỉ cần gọi `ApiKeyword.post(endpoint, payload)`. Khi cần thêm header, auth scheme, hay retry logic, chỉ sửa 1 chỗ trong `ApiKeyword`.
+### SpecBuilder — Three Request Spec Variants
+Centralised REST-Assured spec factory providing three modes: **authenticated JSON** (cookies + `form_key` + `verify_token`), **form-urlencoded** (for server endpoints requiring it), and **unauthenticated** (for negative and security tests). Switching spec means switching one method call.
 
 ### ResponseValidator — Centralized Assertion Engine
-Tập trung toàn bộ assertion logic: HTTP status, Hasaki `error_code`, field value, field not-null, JSON Schema, response time. Khi Hasaki đổi cấu trúc response (ví dụ `status.error_code` → `meta.code`), chỉ cần cập nhật `ResponseValidator` — không động vào từng test file.
-
-### EnvConfig — Multi-Environment Support
-Singleton load đúng file `configs/{env}.properties` theo JVM flag `-Denv`. Thứ tự ưu tiên credential: JVM system property → OS environment variable → file `.properties`. Cho phép chạy local và CI mà không sửa code.
-
-### GsonDataProvider — JSON → DataProvider Bridge
-Đọc file JSON → deserialize → trả về `Object[][]` cho TestNG `@DataProvider`. Mỗi phần tử JSON là một test case độc lập với Allure result riêng, có thể enable/disable bằng cách sửa file JSON.
+All assertion logic lives in one class: HTTP status, Hasaki business `error_code` (0 = success), field equality, field non-empty, list size, and response time thresholds. When the API contract changes, update `ResponseValidator` once — no test file modifications required.
 
 ### JSON Schema Validation
-Mỗi endpoint có file `jsonSchema/*.json` định nghĩa contract (field types, required fields). `ResponseValidator.assertSchema()` kiểm tra toàn bộ response structure — phát hiện ngay khi backend đổi API mà chưa thông báo.
+`SchemaHelper` + REST-Assured's `json-schema-validator` enforces response contracts at the structure level. Schema files in `jsonSchema/` describe the exact shape of each API response. Any missing field or type mismatch fails the test immediately — catching silent breaking changes before they reach production.
 
-### RetryAnalyzer — Flaky Test Resilience
-`RetryAnalyzer` tự động retry test thất bại tối đa 2 lần. `RetryListener` wire cơ chế này vào toàn bộ test suite không cần annotate từng `@Test`. Giảm false-fail do network flakiness hoặc staging instability.
+### BaseTest — Smart Session Management
+Hasaki's API requires a complex multi-token auth chain (`form_key`, `HSKSIGN`, `HASAKI_SESSID`, `verify_token`). `BaseTest` handles this transparently with a `@BeforeSuite` full login and per-class `@BeforeClass` token refresh strategy — avoiding the device-verify trigger while keeping all downstream tests authenticated.
+
+### GsonDataProvider — JSON-to-DataProvider Engine
+`GsonDataProvider.loadFromResource()` reads any JSON array file and converts it to `Object[][]` for TestNG `@DataProvider`. Tests simply declare which JSON file and which fields they need — no parsing code in test classes.
+
+### RetryAnalyzer + RetryListener
+`RetryAnalyzer` distinguishes environment errors (network timeout, 5xx, session expiry) from logic failures (assertion mismatch). Only environment errors trigger a retry, up to `MAX_RETRY = 2`. `RetryListener` applies this automatically to every test in the suite without requiring `retryAnalyzer` annotation on each `@Test`.
 
 ### Log4j2 — Structured Logging
-Log có timestamp, endpoint, status code, response body rút gọn — lưu vào `logs/`. Giúp debug nhanh khi CI fail mà không cần reproduce local.
-
-### Allure Report
-Báo cáo tương tác với step breakdown, HTTP request/response đính kèm, timeline view, pass/fail chart, và lịch sử 20 lần chạy — tự publish lên GitHub Pages sau mỗi CI push.
+Timestamped runtime logs written to `logs/` alongside Allure step logs embedded directly in the report — providing two levels of debugging: quick Allure review for step failures, deep log file analysis for session/network issues.
 
 ---
 
-## 📊 Data-Driven Testing
+## 🔗 API Endpoints Under Test
 
-Test data được externalize hoàn toàn khỏi test code theo pattern **Data-Driven Testing (DDT)**.
-
-**JSON files qua GsonDataProvider:**
-Mỗi feature có 2 file JSON — `*Data.json` (positive) và `*InvalidData.json` (negative). Mỗi object trong mảng JSON là một test case riêng biệt, deserialize thành POJO model tương ứng.
-
-**TestNG `@DataProvider`:**
-`DataProviders.java` tập trung các `@DataProvider` method, đọc từ JSON và trả về `Object[][]`. Mỗi row là một test case độc lập với Allure result entry riêng.
-
-```
-                    ┌──────────────────┐
-                    │  DataProviders   │
-                    └────────┬─────────┘
-             ┌───────────────┼───────────────┐
-             ▼               ▼               ▼
-      ┌────────────┐  ┌────────────┐  ┌────────────┐
-      │  JSON      │  │  JSON      │  │  JSON      │
-      │  *Data     │  │  *Invalid  │  │  Login     │
-      │  .json     │  │  Data.json │  │  .json     │
-      │  (Gson)    │  │  (Gson)    │  │  (Gson)    │
-      └─────┬──────┘  └─────┬──────┘  └─────┬──────┘
-            └───────────────▼────────────────┘
-                    ┌────────────────┐
-                    │  POJO Models   │
-                    │  LoginModel    │
-                    │  AddToCartModel│
-                    │  UpdateCart..  │
-                    │  DeleteCart..  │
-                    └────────┬───────┘
-                             │
-                    ┌────────▼────────┐
-                    │  @Test methods  │
-                    └─────────────────┘
-```
-
----
-
-## 🌐 Multi-Environment Support
-
-Project hỗ trợ 3 môi trường độc lập, chuyển đổi bằng flag `-Denv`:
-
-| Environment | File | Base URI | Mục đích |
-|---|---|---|---|
-| `dev` | `dev.properties` | `https://hasaki.vn/` | Local development (mặc định) |
-| `staging` | `staging.properties` | `https://staging.hasaki.vn/` | UAT, CI pipeline |
-| `prod` | `prod.properties` | `https://hasaki.vn/` | Smoke test trên production |
-
-**EnvConfig** load đúng file theo thứ tự ưu tiên credential:
-1. JVM system property: `-DUSERNAME=xxx -DPASSWORD=yyy`
-2. OS environment variable: `USERNAME` / `PASSWORD`
-3. File `.properties` của env đang chạy (local fallback)
-
-```
-GitHub Secrets (encrypted)
-  API_USERNAME  ──┐
-  API_PASSWORD  ──┤  GitHub Actions inject vào đúng {env}.properties
-                  │  tại runtime (Python3 — xử lý ký tự đặc biệt an toàn)
-                  ▼
-         EnvConfig.getUsername() / getPassword()
-                  │
-                  ▼
-         ConfigsGlobal.USERNAME / PASSWORD
-                  │
-                  ▼
-         SpecBuilder → REST Assured request
-```
+| Endpoint | Method | Description |
+|---|---|---|
+| `/mobile/v1/user/login-hasaki` | `POST` | User authentication — returns `verify_token` + session cookies |
+| `/mobile/v1/main/search` | `GET` | Product search by keyword with pagination |
+| `/mobile/v2/main/products/filters` | `GET` | Product filter by category, price range, attributes |
+| `/mobile/v1/checkout/cart/add-to-cart` | `POST` | Add a product to the shopping cart |
+| `/mobile/v2/checkout/cart/update-product` | `POST` | Update product quantity in cart |
+| `/mobile/v2/checkout/cart/delete-product` | `POST` | Delete a product from cart |
 
 ---
 
 ## 🧪 Test Suites & Coverage
 
-### Endpoints Được Bao Phủ
-
-| Endpoint | Method | Test Class | Số TCs |
+| Module | Test Class | Test Count | Scenarios Covered |
 |---|---|---|---|
-| `/mobile/v1/user/login-hasaki` | POST | `LoginTest.java` | 8 |
-| `/mobile/v1/main/search` | GET | `SearchTest.java` | 14 |
-| `/mobile/v2/main/products/filters` | GET | `FilterTest.java` | 14 |
-| `/mobile/v1/checkout/cart/add-to-cart` | POST | `AddToCartTest.java` | 13 |
-| `/mobile/v2/checkout/cart/update-product` | PUT | `UpdateCartTest.java` | 17 |
-| `/mobile/v2/checkout/cart/delete-product` | DELETE | `DeleteItemInCartTest.java` | 16 |
+| 🔑 Authentication | `LoginTest.java` | **8 tests** | Valid login, remember flag, invalid credentials, empty fields, CSRF enforcement, brute-force lockout, schema validation, response time |
+| 🔍 Search | `SearchTest.java` | **14 tests** | Valid keyword, pagination, special characters, empty keyword, SQL injection, schema validation, response time |
+| 🎛️ Filter | `FilterTest.java` | **14 tests** | Valid category filter, price range, combined filters, invalid params, boundary values, schema validation, response time |
+| 🛒 Add to Cart | `AddToCartTest.java` | **13 tests** | Add valid product, add without auth, invalid product ID, quantity boundaries, duplicate add, schema validation |
+| ✏️ Update Cart | `UpdateCartTest.java` | **17 tests** | Update quantity, max/min boundary, invalid item ID, zero quantity, negative quantity, without auth |
+| 🗑️ Delete from Cart | `DeleteItemInCartTest.java` | **16 tests** | Delete valid item, delete non-existent item, delete without auth, delete already-deleted item |
+| **Total** | **6 test classes** | **90 tests** | |
 
 ### Test Groups
 
-| Group | Mô tả | Số TCs |
+| Group | Purpose | Suites Using It |
 |---|---|---|
-| `positive` | Happy path — đầu vào hợp lệ | ~35 |
-| `negative` | Invalid input, error handling | ~25 |
-| `security` | CSRF, auth bypass, brute-force lockout | ~8 |
-| `schema` | JSON Schema contract validation | ~6 |
-| `performance` | Response time threshold | ~6 |
-| `smoke` | BLOCKER/CRITICAL — chạy sau mỗi build | ~12 |
+| `smoke` | BLOCKER/CRITICAL paths only — fast health check | SuiteSmoke |
+| `positive` | Happy path scenarios | SuiteRegression, SuiteEndToEnd |
+| `negative` | Invalid inputs, error responses | SuiteNegative, SuiteRegression |
+| `schema` | JSON contract validation | SuiteRegression, SuiteSanity |
+| `security` | CSRF, brute-force, unauthorized access | SuiteSecurity |
+| `performance` | Response time thresholds | SuitePerformance |
+| `datadriven` | Data-driven iteration over JSON datasets | SuiteDataDriven |
 
 ### XML Suite Structure
 
 ```
-Suites
-├── SuiteSmoke.xml          ← ~2–3 min | BLOCKER checks | groups: smoke
-├── SuiteSanity.xml         ← Core positive scenarios | groups: positive
-├── SuiteRegression.xml     ← Full regression: positive + negative + schema
-├── SuiteFull.xml           ← Tất cả groups: tất cả 82 test cases
-├── SuiteNegative.xml       ← Chỉ groups: negative + security
-├── SuitePerformance.xml    ← Chỉ groups: performance
-├── SuiteSecurity.xml       ← Chỉ groups: security
-├── SuiteDataDriven.xml     ← Data-driven positive + negative
-└── SuiteEndToEnd.xml       ← Full user journey: Login → Search → Filter → Cart
-    ├── Journey 1: Login → Search → Filter → Add → Update → Delete
-    └── Journey 2: Login fail → Login success → Search → Add → Delete
+suites/
+├── SuiteSmoke.xml          ← BLOCKER smoke tests only (~2–3 min)
+├── SuiteRegression.xml     ← positive + negative + schema (~15–25 min)
+├── SuiteNegative.xml       ← negative & boundary tests
+├── SuiteSecurity.xml       ← CSRF, brute-force, unauthorized
+├── SuitePerformance.xml    ← response time thresholds
+├── SuiteDataDriven.xml     ← full JSON data-driven pass
+├── SuiteSanity.xml         ← sanity checks (schema + smoke)
+├── SuiteEndToEnd.xml       ← full user journeys (2 complete flows)
+│     Journey 1: Login → Search → Filter → Add to Cart → Update → Delete
+│     Journey 2: Failed Login → Retry Login → Search → Add → Delete
+└── SuiteFull.xml           ← all tests, all groups
+```
+
+---
+
+## 📊 Data-Driven Testing
+
+Test data is fully externalized from test code following the **Data-Driven Testing (DDT)** pattern via JSON files and `GsonDataProvider`.
+
+**JSON Data Files (`jsonData/`):**
+Each feature has a `*Data.json` (valid/positive cases) and `*InvalidData.json` (negative cases). Each entry includes a `testCaseId` and `description` for clear Allure report labeling.
+
+**`GsonDataProvider.loadFromResource()`:**
+Reads any JSON array file and maps specified field names to `Object[][]` for seamless integration with TestNG `@DataProvider`. Zero parsing boilerplate in test classes.
+
+**`DataProviders.java` — Centralized Data Hub:**
+All `@DataProvider` methods live in one class, acting as a clear inventory of every data source in the project.
+
+```
+                    ┌────────────────────┐
+                    │   DataProviders    │
+                    └─────────┬──────────┘
+          ┌──────────────────┼──────────────────┐
+          ▼                  ▼                  ▼
+  ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐
+  │ Login*.json  │  │ Search*.json │  │  Cart*.json       │
+  │ (Credentials │  │ (Keywords,   │  │  (productId, qty, │
+  │  edge cases) │  │  pagination) │  │  invalid params)  │
+  └──────┬───────┘  └──────┬───────┘  └────────┬─────────┘
+         └──────────────────▼──────────────────┘
+                    ┌────────────────────┐
+                    │  GsonDataProvider  │
+                    │  loadFromResource()│
+                    └─────────┬──────────┘
+                              │
+                    ┌─────────▼──────────┐
+                    │   POJO Models      │
+                    │   LoginModel       │
+                    │   AddToCartModel   │
+                    │   UpdateCartModel  │
+                    │   DeleteCartModel  │
+                    └─────────┬──────────┘
+                              │
+                    ┌─────────▼──────────┐
+                    │   @Test methods    │
+                    └────────────────────┘
+```
+
+---
+
+## 🌍 Multi-Environment Support
+
+The framework supports **three environments** switchable at runtime via `-Denv`:
+
+| Environment | Config File | Base URI | Use Case |
+|---|---|---|---|
+| `dev` (default) | `configs/dev.properties` | `https://hasaki.vn/` | Local development |
+| `staging` | `configs/staging.properties` | `https://staging.hasaki.vn/` | Pre-release QA |
+| `prod` | `configs/prod.properties` | `https://hasaki.vn/` | Production smoke |
+
+**Credential Priority (highest → lowest):**
+1. JVM system property: `-DUSERNAME=xxx -DPASSWORD=yyy` (CI / CLI override)
+2. Environment variable: `USERNAME` / `PASSWORD` (OS / GitHub Secrets)
+3. Value in the active `.properties` file (local fallback)
+
+---
+
+## 🔐 Security — Credential Management
+
+All account credentials are injected at runtime from **GitHub Secrets** — no sensitive values are ever stored in source code or `.properties` files.
+
+The CI pipeline injects secrets into the target environment's `.properties` file via a Python3 script before Maven runs:
+
+```
+GitHub Secrets
+  CHROME_USER  →  USERNAME in {env}.properties
+  CHROME_PASS  →  PASSWORD in {env}.properties
+```
+
+The injection script targets only the `USERNAME` and `PASSWORD` lines, leaving all other config intact. Credentials are never printed to CI logs.
+
+---
+
+## ⚙️ How to Run the Project
+
+### Prerequisites
+
+- Java 21+
+- Maven 3.x
+- Allure CLI (optional, for local report generation)
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/TopPhan/Hasaki.vn_API_Testing.git
+cd Hasaki.vn_API_Testing
+```
+
+### 2. Configure Credentials
+
+Add your Hasaki.vn account credentials to the target environment's `.properties` file, or pass them as system properties:
+
+```bash
+# Option A — Edit .properties file
+# src/test/resources/configs/dev.properties
+USERNAME = your_email@example.com
+PASSWORD = your_password
+
+# Option B — System properties (no file edit required)
+mvn clean test -DUSERNAME=your_email@example.com -DPASSWORD=your_password
+```
+
+### 3. Run Tests
+
+**Default (dev env, SuiteSmoke):**
+```bash
+mvn clean test
+```
+
+**Specify environment:**
+```bash
+mvn clean test -Denv=staging
+mvn clean test -Denv=prod
+```
+
+**Specify suite:**
+```bash
+mvn clean test -Dsuite.file=suites/SuiteSmoke.xml
+mvn clean test -Dsuite.file=suites/SuiteRegression.xml
+mvn clean test -Dsuite.file=suites/SuiteNegative.xml
+mvn clean test -Dsuite.file=suites/SuiteSecurity.xml
+mvn clean test -Dsuite.file=suites/SuitePerformance.xml
+mvn clean test -Dsuite.file=suites/SuiteEndToEnd.xml
+mvn clean test -Dsuite.file=suites/SuiteFull.xml
+```
+
+**Combine environment + suite:**
+```bash
+mvn clean test -Denv=staging -Dsuite.file=suites/SuiteRegression.xml
+```
+
+**Run a single test class:**
+```bash
+mvn clean test -Dtest=LoginTest
+```
+
+### 4. View Allure Report Locally
+
+```bash
+# Generate and open interactive report
+allure serve allure-results
+
+# Or generate static report folder
+allure generate allure-results --clean -o allure-report
 ```
 
 ---
 
 ## 📈 Allure Report
 
-**Report URL:** [https://TopPhan.github.io/Phan_Hoang_Dinh_API_Testing_Hasaki.vn/](https://TopPhan.github.io/Phan_Hoang_Dinh_API_Testing_Hasaki.vn/)
+**Report URL:** *(Will be published to GitHub Pages after CI/CD setup)*
 
 **What the report shows:**
-- Pass / Fail / Skip summary per test
-- Step-by-step breakdown với HTTP request & response đính kèm tự động
-- Allure `@Epic`, `@Feature`, `@Story`, `@Description`, `@Severity` cho mỗi test
+- Pass / Fail / Skip summary per test, grouped by Feature and Story
+- Step-by-step breakdown of each API call with request/response bodies logged inline
 - Historical trend chart (last 20 CI runs)
-- Environment metadata: Java version, OS, Base URI, Active Env, Tester
+- Failure details with exact assertion messages
+- Environment metadata: Java version, OS, target environment, suite name, author
+
+**Allure Annotations used in this project:**
+
+| Annotation | Usage |
+|---|---|
+| `@Epic` | Top-level grouping — "Hasaki.vn API Testing" |
+| `@Feature` | Feature domain — "Authentication", "Search", "Cart", etc. |
+| `@Story` | Individual test case ID + title (e.g. "TC-L01: Valid credentials") |
+| `@Description` | Full test intent description |
+| `@Severity` | `BLOCKER`, `CRITICAL`, `NORMAL`, `MINOR` |
+| `@Step` | Inline step labels on all `ApiKeyword` and `ResponseValidator` methods |
 
 ---
 
 ## ⚙️ CI/CD Pipeline — GitHub Actions
 
-Pipeline định nghĩa trong `.github/workflows/API_Testing.yml`. Trigger khi:
-- **Push** lên `master` / `main`
-- **Pull Request** vào `master` / `main`
-- **Manual dispatch** — chọn suite và environment qua GitHub UI
+Pipeline defined in `.github/workflows/API_Testing.yml`. Triggers on:
+- **Push** to `master` / `main`
+- **Pull Request** to `master` / `main`
+- **Manual dispatch** via GitHub UI — with selectable `suite` and `env` inputs
 
 ```yaml
-inputs:
-  suite:  # VD: SuiteSmoke.xml / SuiteFull.xml / SuiteRegression.xml
-  env:    # dev / staging / prod  (mặc định: staging)
-
 jobs:
   API_Test:
     runs-on: ubuntu-latest
     steps:
       - Checkout code
       - Set up JDK 21
-      - Inject credentials into {env}.properties   # ← Python3 inject secrets
-      - Run API Tests (mvn clean test -Denv=... -Dsuite.file=...)
-      - Upload Test Artifacts (surefire · allure-results · logs)
-      - Generate Allure Report (keeps 20 runs)
-      - Deploy to GitHub Pages
+      - Inject credentials into {env}.properties   # Python3 replaces USERNAME/PASSWORD
+      - Run Maven Tests                            # -Denv + -Dsuite.file
+      - Upload Artifacts                           # surefire-reports, allure-results, logs
+      - Generate Allure Report                     # keeps last 20 runs
+      - Deploy to GitHub Pages                     # → gh-pages branch
 ```
 
----
+**Manual Dispatch Inputs:**
 
-## 🔐 Security — Credential Management
-
-Toàn bộ credentials được quản lý qua **GitHub Actions Secrets** — không có email hay password nào lưu trong source code.
-
-### How it works
-
-```
-GitHub Secrets (encrypted)
-  API_USERNAME  ──┐
-  API_PASSWORD  ──┤  Inject vào đúng file env tại runtime
-                  ▼
-        Python3 đọc {env}.properties
-        Replace dòng USERNAME / PASSWORD
-        (chỉ trong runner memory, không commit)
-```
-
-File `staging.properties` luôn để trống credentials:
-
-```properties
-USERNAME =
-PASSWORD =
-```
-
-CI workflow inject real values bằng Python (an toàn với ký tự đặc biệt `@`, `!`, `/`):
-
-```yaml
-- name: Inject credentials into env config
-  env:
-    API_USERNAME: ${{ secrets.CHROME_USER }}
-    API_PASSWORD: ${{ secrets.CHROME_PASS }}
-    TARGET_ENV:   ${{ github.event.inputs.env || 'staging' }}
-  run: |
-    python3 - << 'PYEOF'
-    import os
-    env      = os.environ.get("TARGET_ENV", "staging").lower()
-    username = os.environ["API_USERNAME"]
-    password = os.environ["API_PASSWORD"]
-
-    props_path = f"src/test/resources/configs/{env}.properties"
-    with open(props_path, "r", encoding="utf-8") as f:
-        content = f.read()
-    lines = []
-    for line in content.splitlines():
-        if line.strip().startswith("USERNAME"):
-            lines.append(f"USERNAME = {username}")
-        elif line.strip().startswith("PASSWORD"):
-            lines.append(f"PASSWORD = {password}")
-        else:
-            lines.append(line)
-    with open(props_path, "w", encoding="utf-8") as f:
-        f.write("\n".join(lines))
-    PYEOF
-```
-
-### Setting up GitHub Secrets
-
-1. Vào repository → **Settings → Secrets and variables → Actions**
-2. Click **New repository secret** và thêm:
-
-| Secret Name | Description |
-|---|---|
-| `CHROME_USER` | Email đăng nhập tài khoản test |
-| `CHROME_PASS` | Password tài khoản test |
-
-### Running locally
-
-**Windows (Command Prompt as Admin):**
-```cmd
-setx CHROME_USER "your_email@gmail.com"
-setx CHROME_PASS "your_password"
-```
-> Restart IntelliJ IDEA sau `setx` để biến môi trường có hiệu lực.
-
-**macOS / Linux:**
-```bash
-export CHROME_USER="your_email@gmail.com"
-export CHROME_PASS="your_password"
-```
-
----
-
-## ⚙️ Configuration & How to Run the Project
-
-### Prerequisites
-
-- Java 21+ (`java -version`)
-- Maven 3.6+ (`mvn -version`)
-- Internet access đến [https://hasaki.vn/](https://hasaki.vn/) hoặc staging URL
-- Environment variables `CHROME_USER` / `CHROME_PASS` (xem mục Security)
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/TopPhan/Phan_Hoang_Dinh_API_Testing_Hasaki.vn.git
-cd Phan_Hoang_Dinh_API_Testing_Hasaki.vn
-```
-
-### 2. Configure Environment (Optional)
-
-Chỉnh sửa file tương ứng trong `src/test/resources/configs/`:
-
-```properties
-# dev.properties
-BASE_URI      = https://hasaki.vn/
-USERNAME      = your_email@gmail.com   # hoặc để trống, dùng env var
-PASSWORD      = your_password
-
-# Timeout (milliseconds)
-CONNECTION.TIMEOUT = 10000
-READ.TIMEOUT       = 15000
-```
-
-### 3. Run Test Suites
-
-**Chạy Smoke Suite (nhanh nhất — ~2-3 min):**
-```bash
-mvn clean test -Denv=staging -Dsuite.file=suites/SuiteSmoke.xml
-```
-
-**Chạy Full Regression:**
-```bash
-mvn clean test -Denv=staging -Dsuite.file=suites/SuiteRegression.xml
-```
-
-**Chạy tất cả test cases:**
-```bash
-mvn clean test -Denv=staging -Dsuite.file=suites/SuiteFull.xml
-```
-
-**Chạy E2E User Journey:**
-```bash
-mvn clean test -Denv=staging -Dsuite.file=suites/SuiteEndToEnd.xml
-```
-
-**Chạy Negative tests:**
-```bash
-mvn clean test -Denv=staging -Dsuite.file=suites/SuiteNegative.xml
-```
-
-**Chạy Security tests:**
-```bash
-mvn clean test -Denv=staging -Dsuite.file=suites/SuiteSecurity.xml
-```
-
-**Chạy trên Production (Smoke only):**
-```bash
-mvn clean test -Denv=prod -Dsuite.file=suites/SuiteSmoke.xml
-```
-
-### 4. View Allure Report Locally
-
-```bash
-# Generate và mở report tương tác
-allure serve allure-results
-
-# Hoặc generate static report folder
-allure generate allure-results --clean -o allure-report
-```
+| Input | Default | Options |
+|---|---|---|
+| `suite` | `SuiteSmoke.xml` | Any suite file in `suites/` |
+| `env` | `staging` | `dev`, `staging`, `prod` |
 
 ---
 
@@ -649,8 +564,8 @@ allure generate allure-results --clean -o allure-report
 
 | Path | Content |
 |---|---|
-| `allure-results/` | Raw JSON result files cho Allure |
-| `logs/` | Log4j2 runtime log với timestamp và endpoint |
+| `allure-results/` | Raw JSON result files for Allure report generation |
+| `logs/` | Full Log4j2 runtime logs per test run |
 | `target/surefire-reports/` | Maven Surefire XML & HTML reports |
 
 ---
@@ -662,4 +577,5 @@ allure generate allure-results --clean -o allure-report
 
 ---
 
-*Framework này nhắm vào live [Hasaki.vn](https://hasaki.vn/) website cho mục đích demo portfolio.*
+*This framework targets the live [Hasaki.vn](https://hasaki.vn/) APIs for portfolio demonstration purposes.*
+
