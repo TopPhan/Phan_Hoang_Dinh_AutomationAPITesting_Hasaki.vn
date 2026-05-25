@@ -1,0 +1,46 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--
+    ══════════════════════════════════════════════════════════════
+    SECURITY TEST SUITE
+    ──────────────────────────────────────────────────────────────
+    Mục tiêu : Kiểm tra các lỗ hổng bảo mật phổ biến:
+               - CSRF (Cross-Site Request Forgery)
+               - Auth bypass / truy cập trái phép
+               - Thao tác cart của user khác (IDOR)
+               - Brute force / rate limiting
+    Thời gian : ~5–8 phút
+    Trigger   : Trước release, sau thay đổi authentication/authorization
+    Groups    : security
+    ══════════════════════════════════════════════════════════════
+-->
+<suite name="[SECURITY] Hasaki.vn API" verbose="1" parallel="none">
+
+    <listeners>
+        <listener class-name="com.listener.TestListener"/>
+    </listeners>
+
+    <test name="Security - Authentication Vulnerabilities">
+        <groups>
+            <run>
+                <include name="security"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Security - Cart Authorization">
+        <groups>
+            <run>
+                <include name="security"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.UpdateCartTest"/>
+            <class name="com.testScenarios.DeleteItemInCartTest"/>
+        </classes>
+    </test>
+
+</suite>

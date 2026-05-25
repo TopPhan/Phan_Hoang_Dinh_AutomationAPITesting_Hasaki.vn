@@ -1,0 +1,78 @@
+================================================================================
+TÓM TẮT SỬ DỤNG GSONDATAPROVIDER - AUTOMATION TESTING FRAMEWORK
+================================================================================
+
+Class `GsonDataProvider` đã được tối ưu hóa bằng cơ chế bọc (encapsulation). Khi
+đưa class này vào sử dụng thực tế ở các tầng Test hoặc DataProvider, bạn KHÔNG CẦN
+QUAN TÂM đến các hàm xử lý cấp thấp bên trong (như readJsonArray, toObjectArray,
+convertValue).
+
+BẠN CHỈ CẦN LƯU Ý VÀ GỌI ĐÚNG 3 HÀM SAU ĐÂY:
+
+--------------------------------------------------------------------------------
+1. HÀM loadFromResource(resourcePath, fields)
+--------------------------------------------------------------------------------
+* Khi nào dùng: Khi file JSON của bạn là một MẢNG PHẲNG ngay từ đầu (bắt đầu bằng
+  dấu `[` và kết thúc bằng `]`).
+* Mục đích: Đọc toàn bộ các phần tử (test cases) trong file và chuyển thành
+  `Object[][]` để nạp vào hàm `@Test`.
+
+* Cấu trúc JSON phù hợp:
+  [
+    { "keyword": "SON MOI", "page": 1 },
+    { "keyword": "kem duong", "page": 2 }
+  ]
+
+* Cách gọi trong code:
+  String[] fields = new String[]{"keyword", "page"};
+  return GsonDataProvider.loadFromResource("jsonData/SearchData.json", fields);
+
+--------------------------------------------------------------------------------
+2. HÀM loadFromResource(resourcePath, arrayKey, fields)
+--------------------------------------------------------------------------------
+* Khi nào dùng: Khi file JSON của bạn là một ĐỐI TƯỢNG LỚN bọc ngoài, và mảng dữ
+  liệu test case nằm thụt lề bên trong một thuộc tính (Key) chỉ định.
+* Mục đích: Chỉ bóc tách đúng mảng dữ liệu nằm sau `arrayKey` để chạy test, bỏ qua
+  các thông tin rườm rà hoặc metadata khác trong file.
+
+* Cấu trúc JSON phù hợp:
+  {
+    "description": "Danh sách tài khoản test login",
+    "accountList": [
+      { "email": "user1@gmail.com", "password": "123" },
+      { "email": "user2@gmail.com", "password": "456" }
+    ]
+  }
+
+* Cách gọi trong code:
+  String[] fields = new String[]{"email", "password"};
+  return GsonDataProvider.loadFromResource("jsonData/LoginData.json", "accountList", fields);
+
+--------------------------------------------------------------------------------
+3. HÀM getStringField(resourcePath, fieldName)
+--------------------------------------------------------------------------------
+* Khi nào dùng: Khi bạn KHÔNG CẦN CHẠY LẶP dữ liệu. Bạn chỉ muốn mở một file cấu
+  hình JSON tĩnh (chứa url, token, cấu hình môi trường...) để bốc nhanh ra một
+  giá trị chuỗi (String).
+* Mục đích: Lấy nhanh data cấu hình đơn lẻ dùng cho các hàm thiết lập hệ thống
+  như `@BeforeMethod`, `@BeforeSuite` hoặc một case test đặc thù.
+
+* Cấu trúc JSON phù hợp:
+  {
+    "baseUrl": "https://hasaki.vn",
+    "timeout": 30
+  }
+
+* Cách gọi trong code:
+  String url = GsonDataProvider.getStringField("config.json", "baseUrl");
+
+================================================================================
+MẸO NHỎ KHI VIẾT CODE TRÊN IDE (INTELLIJ IDEA)
+================================================================================
+1. Tận dụng tính đa hình (Overload): Bạn chỉ cần gõ đúng một tên hàm duy nhất là
+   `GsonDataProvider.loadFromResource(...)`. IDE sẽ tự động gợi ý cho bạn truyền
+   2 tham số (cho mảng phẳng) hoặc 3 tham số (cho mảng lồng trong key).
+2. Thứ tự mảng fields: Hãy luôn đảm bảo thứ tự khai báo các phần tử trong mảng
+   `String[] fields` phải trùng khớp 100% với thứ tự tham số truyền vào hàm `@Test`
+   để tránh lỗi ép sai kiểu dữ liệu (IllegalArgumentException).
+================================================================================

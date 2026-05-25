@@ -1,0 +1,70 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--
+    ══════════════════════════════════════════════════════════════
+    SMOKE TEST SUITE
+    ──────────────────────────────────────────────────────────────
+    Mục tiêu : Kiểm tra nhanh các luồng BLOCKER / CRITICAL sau mỗi
+               build mới hoặc deploy lên môi trường staging.
+    Thời gian : ~2–3 phút
+    Trigger   : Sau mỗi CI build, trước khi chạy Regression
+    Groups    : smoke
+
+    Listeners:
+      - TestListener  : log, Allure environment, summary
+      - RetryListener : tự động retry test flaky (tối đa 2 lần)
+    ══════════════════════════════════════════════════════════════
+-->
+<suite name="[SMOKE] Hasaki.vn API" verbose="1" parallel="none">
+
+    <listeners>
+        <listener class-name="com.listener.TestListener"/>
+        <listener class-name="com.listener.RetryListener"/>
+    </listeners>
+
+    <test name="Smoke - Authentication">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Smoke - Search">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.SearchTest"/>
+        </classes>
+    </test>
+
+    <test name="Smoke - Filter">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.FilterTest"/>
+        </classes>
+    </test>
+
+    <test name="Smoke - Cart">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.AddToCartTest"/>
+            <class name="com.testScenarios.DeleteItemInCartTest"/>
+        </classes>
+    </test>
+
+</suite>

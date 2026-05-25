@@ -1,0 +1,99 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--
+    ══════════════════════════════════════════════════════════════
+    SANITY TEST SUITE
+    ──────────────────────────────────────────────────────────────
+    Mục tiêu : Xác nhận core features hoạt động đúng SAU KHI fix bug
+               hoặc thay đổi nhỏ. Hẹp hơn Regression, rộng hơn Smoke.
+    Thời gian : ~5–8 phút
+    Trigger   : Sau bug fix, sau hotfix deploy
+    Groups    : positive (không bao gồm negative / security / performance)
+    ══════════════════════════════════════════════════════════════
+-->
+<suite name="[SANITY] Hasaki.vn API" verbose="1" parallel="none">
+
+    <listeners>
+        <listener class-name="com.listener.TestListener"/>
+    </listeners>
+
+    <test name="Sanity - Login (Positive only)">
+        <groups>
+            <run>
+                <include name="positive"/>
+                <exclude name="negative"/>
+                <exclude name="security"/>
+                <exclude name="performance"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Sanity - Search (Positive only)">
+        <groups>
+            <run>
+                <include name="positive"/>
+                <exclude name="negative"/>
+                <exclude name="performance"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.SearchTest"/>
+        </classes>
+    </test>
+
+    <test name="Sanity - Filter (Positive only)">
+        <groups>
+            <run>
+                <include name="positive"/>
+                <exclude name="negative"/>
+                <exclude name="performance"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.FilterTest"/>
+        </classes>
+    </test>
+
+    <test name="Sanity - Add To Cart (Positive only)">
+        <groups>
+            <run>
+                <include name="positive"/>
+                <exclude name="negative"/>
+                <exclude name="performance"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.AddToCartTest"/>
+        </classes>
+    </test>
+
+    <test name="Sanity - Update Cart (Positive only)">
+        <groups>
+            <run>
+                <include name="positive"/>
+                <exclude name="negative"/>
+                <exclude name="performance"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.UpdateCartTest"/>
+        </classes>
+    </test>
+
+    <test name="Sanity - Delete Cart Item (Positive only)">
+        <groups>
+            <run>
+                <include name="positive"/>
+                <exclude name="negative"/>
+                <exclude name="performance"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.DeleteItemInCartTest"/>
+        </classes>
+    </test>
+
+</suite>

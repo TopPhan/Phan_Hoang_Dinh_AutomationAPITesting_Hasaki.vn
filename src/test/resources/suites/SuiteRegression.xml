@@ -1,0 +1,115 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--
+    ══════════════════════════════════════════════════════════════
+    REGRESSION TEST SUITE
+    ──────────────────────────────────────────────────────────────
+    Mục tiêu : Chạy toàn bộ positive + negative để đảm bảo không có
+               tính năng cũ bị phá vỡ sau sprint mới.
+    Thời gian : ~15–25 phút
+    Trigger   : Cuối sprint, trước release, merge vào main/master
+    Groups    : positive, negative, datadriven, schema
+                (KHÔNG bao gồm performance & security — chạy suite riêng)
+    ══════════════════════════════════════════════════════════════
+-->
+<suite name="[REGRESSION] Hasaki.vn API" verbose="1" parallel="none"
+       configfailurepolicy="continue">
+
+    <listeners>
+        <listener class-name="com.listener.TestListener"/>
+    </listeners>
+
+    <!-- ── Authentication ──────────────────────────────────────── -->
+    <test name="Regression - Login">
+        <groups>
+            <run>
+                <include name="positive"/>
+                <include name="negative"/>
+                <include name="schema"/>
+                <exclude name="performance"/>
+                <exclude name="security"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.LoginTest"/>
+        </classes>
+    </test>
+
+    <!-- ── Discovery ───────────────────────────────────────────── -->
+    <test name="Regression - Search">
+        <groups>
+            <run>
+                <include name="positive"/>
+                <include name="negative"/>
+                <include name="datadriven"/>
+                <include name="schema"/>
+                <exclude name="performance"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.SearchTest"/>
+        </classes>
+    </test>
+
+    <test name="Regression - Filter">
+        <groups>
+            <run>
+                <include name="positive"/>
+                <include name="negative"/>
+                <include name="datadriven"/>
+                <include name="schema"/>
+                <exclude name="performance"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.FilterTest"/>
+        </classes>
+    </test>
+
+    <!-- ── Cart ────────────────────────────────────────────────── -->
+    <test name="Regression - Add To Cart">
+        <groups>
+            <run>
+                <include name="positive"/>
+                <include name="negative"/>
+                <include name="datadriven"/>
+                <include name="schema"/>
+                <exclude name="performance"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.AddToCartTest"/>
+        </classes>
+    </test>
+
+    <test name="Regression - Update Cart">
+        <groups>
+            <run>
+                <include name="positive"/>
+                <include name="negative"/>
+                <include name="datadriven"/>
+                <exclude name="performance"/>
+                <exclude name="security"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.UpdateCartTest"/>
+        </classes>
+    </test>
+
+    <test name="Regression - Delete Cart Item">
+        <groups>
+            <run>
+                <include name="positive"/>
+                <include name="negative"/>
+                <include name="datadriven"/>
+                <exclude name="performance"/>
+                <exclude name="security"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.DeleteItemInCartTest"/>
+        </classes>
+    </test>
+
+</suite>

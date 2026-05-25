@@ -1,0 +1,69 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--
+    ══════════════════════════════════════════════════════════════
+    PERFORMANCE TEST SUITE
+    ──────────────────────────────────────────────────────────────
+    Mục tiêu : Kiểm tra response time của từng endpoint so với
+               ngưỡng SLA định nghĩa trong từng test case.
+               Phát hiện regression về performance sau deploy.
+    Thời gian : ~5–10 phút (tuỳ server latency)
+    Trigger   : Sau deploy lên staging/production, weekly schedule
+    Groups    : performance
+    Lưu ý    : Chạy khi server KHÔNG có traffic cao để kết quả chính xác
+    ══════════════════════════════════════════════════════════════
+-->
+<suite name="[PERFORMANCE] Hasaki.vn API - Response Time SLA" verbose="1"
+       parallel="none">
+
+    <listeners>
+        <listener class-name="com.listener.TestListener"/>
+    </listeners>
+
+    <test name="Performance - Login Endpoint">
+        <groups>
+            <run>
+                <include name="performance"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Performance - Search Endpoint">
+        <groups>
+            <run>
+                <include name="performance"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.SearchTest"/>
+        </classes>
+    </test>
+
+    <test name="Performance - Filter Endpoint">
+        <groups>
+            <run>
+                <include name="performance"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.FilterTest"/>
+        </classes>
+    </test>
+
+    <test name="Performance - Cart Endpoints">
+        <groups>
+            <run>
+                <include name="performance"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.AddToCartTest"/>
+            <class name="com.testScenarios.UpdateCartTest"/>
+            <class name="com.testScenarios.DeleteItemInCartTest"/>
+        </classes>
+    </test>
+
+</suite>

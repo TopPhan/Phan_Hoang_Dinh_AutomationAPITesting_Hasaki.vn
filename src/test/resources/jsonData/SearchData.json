@@ -1,0 +1,47 @@
+[
+  {
+    "testCaseId": "TC-S01-D1",
+    "keyword": "SON MOI",
+    "page": 1,
+    "size": 40,
+    "hasMetaData": 1,
+    "expectedMinProducts": 1,
+    "description": "Keyword hợp lệ - son môi tiếng hoa"
+  },
+  {
+    "testCaseId": "TC-S01-D2",
+    "keyword": "kem duong da",
+    "page": 1,
+    "size": 20,
+    "hasMetaData": 1,
+    "expectedMinProducts": 1,
+    "description": "Keyword hợp lệ - kem dưỡng da"
+  },
+  {
+    "testCaseId": "TC-S01-D3",
+    "keyword": "nuoc hoa hong",
+    "page": 1,
+    "size": 10,
+    "hasMetaData": 1,
+    "expectedMinProducts": 1,
+    "description": "Keyword hợp lệ - nước hoa hồng"
+  },
+  {
+    "testCaseId": "TC-S01-D4",
+    "keyword": "serum",
+    "page": 1,
+    "size": 40,
+    "hasMetaData": 1,
+    "expectedMinProducts": 1,
+    "description": "Keyword tiếng Anh phổ biến"
+  },
+  {
+    "testCaseId": "TC-S01-D5",
+    "keyword": "sunscreen",
+    "page": 1,
+    "size": 40,
+    "hasMetaData": 1,
+    "expectedMinProducts": 1,
+    "description": "Keyword kem chống nắng tiếng Anh"
+  }
+]

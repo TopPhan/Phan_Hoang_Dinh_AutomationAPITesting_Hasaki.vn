@@ -1,0 +1,32 @@
+[
+  {
+    "testCaseId": "TC-L02",
+    "username": "topphanst@gmail.com",
+    "password": "sai_mat_khau_123",
+    "description": "Sai password"
+  },
+  {
+    "testCaseId": "TC-L03",
+    "username": "email_khong_ton_tai@fake.com",
+    "password": "topphan93",
+    "description": "Sai username / email không tồn tại"
+  },
+  {
+    "testCaseId": "TC-L04",
+    "username": "",
+    "password": "topphan93",
+    "description": "Username rỗng"
+  },
+  {
+    "testCaseId": "TC-L05",
+    "username": "topphanst@gmail.com",
+    "password": "",
+    "description": "Password rỗng"
+  },
+  {
+    "testCaseId": "TC-L06",
+    "username": "email_khong_ton_tai@fake.com",
+    "password": "P@ss!#$%^&*()",
+    "description": "Password chứa ký tự đặc biệt"
+  }
+]

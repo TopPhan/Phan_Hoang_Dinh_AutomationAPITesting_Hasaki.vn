@@ -1,0 +1,32 @@
+[
+  {
+    "testCaseId": "TC-D07-D1",
+    "productId": -999,
+    "quantity": 2,
+    "description": "Product ID âm - không hợp lệ"
+  },
+  {
+    "testCaseId": "TC-D15-D1",
+    "productId": 0,
+    "quantity": 2,
+    "description": "Product ID = 0 - giá trị biên"
+  },
+  {
+    "testCaseId": "TC-D10-D1",
+    "productId": 183184,
+    "quantity": 0,
+    "description": "Quantity = 0"
+  },
+  {
+    "testCaseId": "TC-D11-D1",
+    "productId": 183184,
+    "quantity": -1,
+    "description": "Quantity âm"
+  },
+  {
+    "testCaseId": "TC-D08-D1",
+    "productId": 9999999,
+    "quantity": 2,
+    "description": "Product ID không tồn tại"
+  }
+]

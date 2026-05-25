@@ -1,0 +1,26 @@
+[
+  {
+    "testCaseId": "TC-U06-D1",
+    "productId": -999,
+    "quantity": 2,
+    "description": "Product ID âm - không hợp lệ"
+  },
+  {
+    "testCaseId": "TC-U09-D1",
+    "productId": 99791,
+    "quantity": 0,
+    "description": "Quantity = 0"
+  },
+  {
+    "testCaseId": "TC-U10-D1",
+    "productId": 99791,
+    "quantity": -1,
+    "description": "Quantity âm"
+  },
+  {
+    "testCaseId": "TC-U07-D1",
+    "productId": 9999999,
+    "quantity": 2,
+    "description": "Product ID không tồn tại"
+  }
+]
