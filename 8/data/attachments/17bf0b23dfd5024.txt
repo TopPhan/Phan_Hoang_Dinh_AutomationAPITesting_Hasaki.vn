@@ -1,0 +1,37 @@
+RESPONSE:
+{
+    "status": {
+        "error_code": 0,
+        "error_message": "login success",
+        "alert_message": "Đăng nhập thành công."
+    },
+    "data": {
+        "verify_device": false,
+        "verify_token": null,
+        "user_info": {
+            "id": 1774805782,
+            "hash_key": "752508a1eb9439c2347cec68680ff7ebdd477fb008d8c31f6addc45230cde04e",
+            "access_token": null,
+            "chat_token": "eyJERVMiOiI1WDdKMTZHaURJRnpKdEhNdWxyZkZSVTZuemw1dUFFRHFKTDAyN1BjVDEwPSIsInR5cCI6IkpXVCIsImFsZyI6IkhTMjU2In0.eyJjdXN0b21lcl9pZCI6ImJPVUVoSnNNQ28xTjBUazQ5TDRSbGl6aXRUT3NERkw3cHNNUXh6WG8wenM9IiwiZXhwIjoxNzc5Njk4MjQzfQ.58J4ji0dRgcxv0UMEN_ALQM9l2X562i0zA62h8AB5ss",
+            "email": "topphanst@gmail.com",
+            "first_name": "HoangDinh",
+            "last_name": null,
+            "full_name": "HoangDinh ",
+            "avatar_url": "",
+            "phone": null,
+            "gender": 0,
+            "dob": 849114000,
+            "user_type": "G",
+            "is_subscribed": false,
+            "is_root": false,
+            "enable": {
+                "email": true,
+                "phone": true
+            },
+            "location": null,
+            "cart_id": 17689010604702,
+            "cart_qty": 24,
+            "has_order": true
+        }
+    }
+}
