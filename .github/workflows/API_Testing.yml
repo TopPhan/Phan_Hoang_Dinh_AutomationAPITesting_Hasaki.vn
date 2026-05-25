@@ -83,7 +83,7 @@ jobs:
           echo "Env   : $ENV"
           mvn clean test \
             -Denv=$ENV \
-            -Dsuite.file="suites/${SUITE}" \
+            -Dsuite.file="src/test/resources/suites/${SUITE}" \
             -Dsurefire.failIfNoSpecifiedTests=false
         continue-on-error: true
 
