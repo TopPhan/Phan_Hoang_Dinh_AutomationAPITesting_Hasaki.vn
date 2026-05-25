@@ -81,7 +81,7 @@ jobs:
       # ── Chạy test suite với đúng env ──────────────────────────────────────
       - name: Run API Tests
         run: |
-          SUITE="${{ github.event.inputs.suite || 'SuiteSmoke.xml' }}"
+          SUITE="${{ github.event.inputs.suite || 'SuiteDataDriven.xml' }}"
           ENV="${{ github.event.inputs.env || 'dev' }}"
           echo "Suite : $SUITE"
           echo "Env   : $ENV"
