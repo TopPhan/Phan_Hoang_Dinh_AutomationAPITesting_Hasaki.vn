@@ -2,16 +2,29 @@
 ![REST Assured](https://img.shields.io/badge/REST--Assured-5.x-green?style=flat-square&logo=java)
 ![TestNG](https://img.shields.io/badge/TestNG-7.x-red?style=flat-square)
 ![Maven](https://img.shields.io/badge/Maven-Project-blue?style=flat-square&logo=apache-maven) <br>
-![API Testing](https://github.com/TopPhan/Hasaki.vn_API_Testing/actions/workflows/API_Testing.yml/badge.svg)
+![API Testing](https://github.com/TopPhan/Phan_Hoang_Dinh_AutomationAPITesting_Hasaki.vn/actions/workflows/API_Testing.yml/badge.svg)
 
 # 🌿 [Hasaki.vn](https://hasaki.vn/) — API Testing Framework
 
 <!-- PROJECT SCREENSHOT PLACEHOLDER -->
-> 📌 *Screenshot of the project / Allure Report will be added after GitHub Actions setup.*
+> <img width="1885" height="841" alt="image" src="https://github.com/user-attachments/assets/4eb3cf3e-fc3b-43dd-9dc4-4d24c2ca7cd1" />
+
+> <img width="1919" height="839" alt="image" src="https://github.com/user-attachments/assets/a41e532c-f947-4d32-be6d-ae7ff15d53f6" />
+
+> <img width="1895" height="868" alt="image" src="https://github.com/user-attachments/assets/27d5cc4b-6d22-453d-9e6f-5a4b41bf7e0d" />
+
+> <img width="1911" height="1024" alt="image" src="https://github.com/user-attachments/assets/aa51a2eb-60d3-489d-bbb1-6f193df1d76d" />
+
+> <img width="1919" height="1023" alt="image" src="https://github.com/user-attachments/assets/bd12d115-28c1-4bd9-822b-4721fd3d5cdf" />
+
+
+
+
+
 
 ---
 
-[![Allure Report](https://img.shields.io/badge/Allure%20Report-View%20Here-ff69b4?style=for-the-badge&logo=allure)](https://TopPhan.github.io/Hasaki.vn_API_Testing/)
+[![Allure Report](https://img.shields.io/badge/Allure%20Report-View%20Here-ff69b4?style=for-the-badge&logo=allure)](https://topphan.github.io/Phan_Hoang_Dinh_AutomationAPITesting_Hasaki.vn)
 
 ---
 
