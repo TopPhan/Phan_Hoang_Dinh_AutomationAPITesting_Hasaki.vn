@@ -1,0 +1,77 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--
+    ══════════════════════════════════════════════════════════════
+    DATA-DRIVEN TEST SUITE
+    ──────────────────────────────────────────────────────────────
+    Mục tiêu : Chạy các test case sử dụng @DataProvider + JSON file
+               để kiểm tra nhiều bộ dữ liệu đầu vào khác nhau.
+               Bao phủ cả valid và invalid data từ file JSON.
+    Thời gian : ~10–15 phút
+    Trigger   : Khi thêm data mới vào JSON, sau thay đổi business rules
+    Groups    : datadriven
+    ══════════════════════════════════════════════════════════════
+-->
+<suite name="[DATA-DRIVEN] Hasaki.vn API - JSON Data Provider Tests"
+       verbose="1" parallel="none">
+
+    <listeners>
+        <listener class-name="com.listener.TestListener"/>
+    </listeners>
+
+    <test name="Data-Driven - Search (Valid + Invalid Keywords)">
+        <groups>
+            <run>
+                <include name="datadriven"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.SearchTest"/>
+        </classes>
+    </test>
+
+    <test name="Data-Driven - Filter (Multiple Params)">
+        <groups>
+            <run>
+                <include name="datadriven"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.FilterTest"/>
+        </classes>
+    </test>
+
+    <test name="Data-Driven - Add To Cart (Multiple Products/Quantities)">
+        <groups>
+            <run>
+                <include name="datadriven"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.AddToCartTest"/>
+        </classes>
+    </test>
+
+    <test name="Data-Driven - Update Cart (Multiple Scenarios)">
+        <groups>
+            <run>
+                <include name="datadriven"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.UpdateCartTest"/>
+        </classes>
+    </test>
+
+    <test name="Data-Driven - Delete Cart (Multiple Items)">
+        <groups>
+            <run>
+                <include name="datadriven"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.DeleteItemInCartTest"/>
+        </classes>
+    </test>
+
+</suite>

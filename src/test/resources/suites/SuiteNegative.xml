@@ -1,0 +1,88 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--
+    ══════════════════════════════════════════════════════════════
+    NEGATIVE TEST SUITE
+    ──────────────────────────────────────────────────────────────
+    Mục tiêu : Tập trung toàn bộ test case kiểm tra hành vi của server
+               khi nhận input sai, thiếu, hoặc không hợp lệ.
+               Đảm bảo error handling và validation hoạt động đúng.
+    Thời gian : ~8–12 phút
+    Trigger   : Khi có thay đổi validation logic, trước release
+    Groups    : negative
+    ══════════════════════════════════════════════════════════════
+-->
+<suite name="[NEGATIVE] Hasaki.vn API - Error Handling &amp; Validation"
+       verbose="1" parallel="none" configfailurepolicy="continue">
+
+    <listeners>
+        <listener class-name="com.listener.TestListener"/>
+    </listeners>
+
+    <test name="Negative - Login Validation">
+        <groups>
+            <run>
+                <include name="negative"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Negative - Search Validation">
+        <groups>
+            <run>
+                <include name="negative"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.SearchTest"/>
+        </classes>
+    </test>
+
+    <test name="Negative - Filter Validation">
+        <groups>
+            <run>
+                <include name="negative"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.FilterTest"/>
+        </classes>
+    </test>
+
+    <test name="Negative - Add To Cart Validation">
+        <groups>
+            <run>
+                <include name="negative"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.AddToCartTest"/>
+        </classes>
+    </test>
+
+    <test name="Negative - Update Cart Validation">
+        <groups>
+            <run>
+                <include name="negative"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.UpdateCartTest"/>
+        </classes>
+    </test>
+
+    <test name="Negative - Delete Cart Item Validation">
+        <groups>
+            <run>
+                <include name="negative"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.DeleteItemInCartTest"/>
+        </classes>
+    </test>
+
+</suite>

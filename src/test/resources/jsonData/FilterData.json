@@ -1,0 +1,32 @@
+[
+  {
+    "testCaseId": "TC-F01-D1",
+    "keyword": "SON MOI",
+    "platform": "web",
+    "description": "Keyword hợp lệ - platform web"
+  },
+  {
+    "testCaseId": "TC-F01-D2",
+    "keyword": "SON MOI",
+    "platform": "mobile",
+    "description": "Keyword hợp lệ - platform mobile"
+  },
+  {
+    "testCaseId": "TC-F01-D3",
+    "keyword": "kem duong da",
+    "platform": "web",
+    "description": "Keyword kem dưỡng da - platform web"
+  },
+  {
+    "testCaseId": "TC-F01-D4",
+    "keyword": "serum",
+    "platform": "web",
+    "description": "Keyword serum - platform web"
+  },
+  {
+    "testCaseId": "TC-F01-D5",
+    "keyword": "sunscreen",
+    "platform": "mobile",
+    "description": "Keyword sunscreen - platform mobile"
+  }
+]

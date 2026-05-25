@@ -1,0 +1,26 @@
+[
+  {
+    "testCaseId": "TC-S08-D1",
+    "keyword": "xyzabc123nonexistent999",
+    "page": 1,
+    "size": 40,
+    "hasMetaData": 1,
+    "description": "Keyword không tồn tại - chuỗi ngẫu nhiên"
+  },
+  {
+    "testCaseId": "TC-S08-D2",
+    "keyword": "qwerty999notfound",
+    "page": 1,
+    "size": 40,
+    "hasMetaData": 1,
+    "description": "Keyword không tồn tại - chuỗi khác"
+  },
+  {
+    "testCaseId": "TC-S08-D3",
+    "keyword": "zzzzproductnotfound123456",
+    "page": 1,
+    "size": 40,
+    "hasMetaData": 1,
+    "description": "Keyword không tồn tại - chuỗi z"
+  }
+]

@@ -1,0 +1,171 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--
+    ══════════════════════════════════════════════════════════════
+    END-TO-END TEST SUITE
+    ──────────────────────────────────────────────────────────────
+    Mục tiêu : Mô phỏng hành trình người dùng thực tế từ đầu đến cuối.
+               Mỗi <test> là một user journey hoàn chỉnh và chạy TUẦN TỰ
+               vì session/cookie được chia sẻ qua BaseTest.
+
+    User Journey được bao phủ:
+      Journey 1 — "Mua hàng tiêu chuẩn"
+          Login → Search sản phẩm → Filter kết quả
+          → Add to Cart → Update số lượng → Delete item
+
+      Journey 2 — "Khách vãng lai thất bại rồi đăng nhập"
+          Login thất bại (sai mật khẩu) → Login thành công
+          → Search → Add to Cart → Delete item
+
+    Thời gian : ~10–15 phút
+    Trigger   : Trước release lớn, kiểm tra staging end-to-end
+    Groups    : positive, integration (loại trừ isolated unit tests)
+    ══════════════════════════════════════════════════════════════
+-->
+<suite name="[E2E] Hasaki.vn API - User Journeys" verbose="1"
+       parallel="none" configfailurepolicy="continue">
+
+    <listeners>
+        <listener class-name="com.listener.TestListener"/>
+    </listeners>
+
+    <!-- ────────────────────────────────────────────────────────
+         JOURNEY 1: Mua hàng tiêu chuẩn
+         Login → Search → Filter → Add → Update → Delete
+         ──────────────────────────────────────────────────────── -->
+    <test name="E2E Journey 1 - Step 1: Authenticate">
+        <groups>
+            <run>
+                <include name="positive"/>
+                <include name="smoke"/>
+                <exclude name="negative"/>
+                <exclude name="performance"/>
+                <exclude name="security"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="E2E Journey 1 - Step 2: Search Product">
+        <groups>
+            <run>
+                <include name="positive"/>
+                <include name="smoke"/>
+                <exclude name="negative"/>
+                <exclude name="performance"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.SearchTest"/>
+        </classes>
+    </test>
+
+    <test name="E2E Journey 1 - Step 3: Filter Product">
+        <groups>
+            <run>
+                <include name="positive"/>
+                <include name="smoke"/>
+                <exclude name="negative"/>
+                <exclude name="performance"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.FilterTest"/>
+        </classes>
+    </test>
+
+    <test name="E2E Journey 1 - Step 4: Add Product to Cart">
+        <groups>
+            <run>
+                <include name="positive"/>
+                <include name="integration"/>
+                <include name="smoke"/>
+                <exclude name="negative"/>
+                <exclude name="performance"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.AddToCartTest"/>
+        </classes>
+    </test>
+
+    <test name="E2E Journey 1 - Step 5: Update Cart">
+        <groups>
+            <run>
+                <include name="positive"/>
+                <include name="integration"/>
+                <exclude name="negative"/>
+                <exclude name="performance"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.UpdateCartTest"/>
+        </classes>
+    </test>
+
+    <test name="E2E Journey 1 - Step 6: Remove Item from Cart">
+        <groups>
+            <run>
+                <include name="positive"/>
+                <include name="integration"/>
+                <exclude name="negative"/>
+                <exclude name="performance"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.DeleteItemInCartTest"/>
+        </classes>
+    </test>
+
+    <!-- ────────────────────────────────────────────────────────
+         JOURNEY 2: Đăng nhập sai → đăng nhập đúng → mua hàng
+         ──────────────────────────────────────────────────────── -->
+    <test name="E2E Journey 2 - Step 1: Failed Login then Success">
+        <groups>
+            <run>
+                <include name="positive"/>
+                <include name="negative"/>
+                <include name="smoke"/>
+                <exclude name="performance"/>
+                <exclude name="security"/>
+                <exclude name="schema"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="E2E Journey 2 - Step 2: Search after Login">
+        <groups>
+            <run>
+                <include name="positive"/>
+                <include name="smoke"/>
+                <exclude name="negative"/>
+                <exclude name="performance"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.SearchTest"/>
+        </classes>
+    </test>
+
+    <test name="E2E Journey 2 - Step 3: Add and Remove Item">
+        <groups>
+            <run>
+                <include name="positive"/>
+                <include name="integration"/>
+                <include name="smoke"/>
+                <exclude name="negative"/>
+                <exclude name="performance"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testScenarios.AddToCartTest"/>
+            <class name="com.testScenarios.DeleteItemInCartTest"/>
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,20 @@
+[
+  {
+    "testCaseId": "TC-C01-D1",
+    "productId": 6710,
+    "quantity": 1,
+    "description": "Sản phẩm hợp lệ - quantity 1"
+  },
+  {
+    "testCaseId": "TC-C01-D2",
+    "productId": 6710,
+    "quantity": 2,
+    "description": "Sản phẩm hợp lệ - quantity 2"
+  },
+  {
+    "testCaseId": "TC-C01-D3",
+    "productId": 6710,
+    "quantity": 3,
+    "description": "Sản phẩm hợp lệ - quantity 3"
+  }
+]

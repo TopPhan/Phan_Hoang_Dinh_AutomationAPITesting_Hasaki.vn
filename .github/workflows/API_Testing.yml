@@ -1,0 +1,120 @@
+name: Hasaki.vn API Testing
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+    inputs:
+      suite:
+        description: 'Suite XML (VD: SuiteSmoke.xml / SuiteFull.xml)'
+        required: false
+        default: 'SuiteSmoke.xml'
+      env:
+        description: 'Môi trường chạy test (dev / staging / prod)'
+        required: false
+        default: 'staging'
+
+jobs:
+  API_Test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+
+      # ── Inject credentials vào đúng file env ──────────────────────────────
+      # EnvConfig đọc từ configs/{env}.properties — inject vào đúng file đó
+      - name: Inject credentials into env config
+        env:
+          API_USERNAME: ${{ secrets.CHROME_USER }}
+          API_PASSWORD: ${{ secrets.CHROME_PASS }}
+          TARGET_ENV:   ${{ github.event.inputs.env || 'staging' }}
+        run: |
+          python3 - << 'PYEOF'
+          import os
+
+          env      = os.environ.get("TARGET_ENV", "staging").lower()
+          username = os.environ["API_USERNAME"]
+          password = os.environ["API_PASSWORD"]
+
+          props_path = f"src/test/resources/configs/{env}.properties"
+
+          try:
+              with open(props_path, "r", encoding="utf-8") as f:
+                  content = f.read()
+
+              lines = []
+              for line in content.splitlines():
+                  stripped = line.strip()
+                  if stripped.startswith("USERNAME"):
+                      lines.append(f"USERNAME = {username}")
+                  elif stripped.startswith("PASSWORD"):
+                      lines.append(f"PASSWORD = {password}")
+                  else:
+                      lines.append(line)
+
+              with open(props_path, "w", encoding="utf-8") as f:
+                  f.write("\n".join(lines))
+
+              print(f"Injected credentials into: {props_path}")
+          except FileNotFoundError:
+              print(f"ERROR: Config file not found: {props_path}")
+              exit(1)
+          PYEOF
+
+      # ── Chạy test suite với đúng env ──────────────────────────────────────
+      - name: Run API Tests
+        run: |
+          SUITE="${{ github.event.inputs.suite || 'SuiteSmoke.xml' }}"
+          ENV="${{ github.event.inputs.env || 'staging' }}"
+          echo "Suite : $SUITE"
+          echo "Env   : $ENV"
+          mvn clean test \
+            -Denv=$ENV \
+            -Dsuite.file="suites/${SUITE}" \
+            -Dsurefire.failIfNoSpecifiedTests=false
+        continue-on-error: true
+
+      # ── Upload artifacts ───────────────────────────────────────────────────
+      - name: Upload Test Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-test-artifacts-${{ github.event.inputs.env || 'staging' }}
+          path: |
+            target/surefire-reports/
+            allure-results/
+            logs/
+
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Generate Allure Report
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        with:
+          allure_results: allure-results
+          allure_history: allure-history
+          keep_reports: 20
+
+      - name: Deploy Allure Report to GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: allure-history
+          publish_branch: gh-pages

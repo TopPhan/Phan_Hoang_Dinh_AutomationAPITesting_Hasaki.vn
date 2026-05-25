@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "object",
+      "properties": {
+        "error_code": {
+          "type": "number"
+        },
+        "error_message": {
+          "type": "string"
+        },
+        "alert_message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "error_code",
+        "error_message",
+        "alert_message"
+      ]
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "verify_device": {
+          "type": "boolean"
+        },
+        "verify_token": {},
+        "user_info": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number"
+            },
+            "hash_key": {
+              "type": "string"
+            },
+            "access_token": {},
+            "chat_token": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "last_name": {},
+            "full_name": {
+              "type": "string"
+            },
+            "avatar_url": {
+              "type": "string"
+            },
+            "phone": {},
+            "gender": {
+              "type": "number"
+            },
+            "dob": {
+              "type": "number"
+            },
+            "user_type": {
+              "type": "string"
+            },
+            "is_subscribed": {
+              "type": "boolean"
+            },
+            "is_root": {
+              "type": "boolean"
+            },
+            "enable": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "boolean"
+                },
+                "phone": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "email",
+                "phone"
+              ]
+            },
+            "location": {},
+            "cart_id": {
+              "type": "number"
+            },
+            "cart_qty": {
+              "type": "number"
+            },
+            "has_order": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "id",
+            "hash_key",
+            "access_token",
+            "chat_token",
+            "email",
+            "first_name",
+            "last_name",
+            "full_name",
+            "avatar_url",
+            "phone",
+            "gender",
+            "dob",
+            "user_type",
+            "is_subscribed",
+            "is_root",
+            "enable",
+            "location",
+            "cart_id",
+            "cart_qty",
+            "has_order"
+          ]
+        }
+      },
+      "required": [
+        "verify_device",
+        "verify_token",
+        "user_info"
+      ]
+    }
+  },
+  "required": [
+    "status",
+    "data"
+  ]
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "testCaseId": "TC-D01-D1",
+    "productId": 183184,
+    "quantity": 1,
+    "description": "Xóa sản phẩm hợp lệ - quantity 1"
+  },
+  {
+    "testCaseId": "TC-D01-D2",
+    "productId": 183184,
+    "quantity": 2,
+    "description": "Xóa sản phẩm hợp lệ - quantity 2"
+  }
+]

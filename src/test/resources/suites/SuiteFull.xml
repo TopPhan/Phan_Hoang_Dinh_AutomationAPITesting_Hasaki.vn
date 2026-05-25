@@ -1,0 +1,61 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--
+    ══════════════════════════════════════════════════════════════
+    FULL TEST SUITE (ALL TESTS)
+    ──────────────────────────────────────────────────────────────
+    Mục tiêu : Chạy TOÀN BỘ test case của project, bao gồm tất cả
+               groups: positive, negative, datadriven, schema,
+               security, performance, integration.
+    Thời gian : ~30–45 phút
+    Trigger   : Nightly build, trước major release
+    Lưu ý    : Không dùng cho CI build thường — dùng SuiteSmoke thay thế
+    ══════════════════════════════════════════════════════════════
+-->
+<suite name="[FULL] Hasaki.vn API - All Tests" verbose="1"
+       parallel="none" configfailurepolicy="continue">
+
+    <listeners>
+        <listener class-name="com.listener.TestListener"/>
+    </listeners>
+
+    <!-- ── Authentication ──────────────────────────────────────── -->
+    <test name="Full - Login (All Groups)">
+        <classes>
+            <class name="com.testScenarios.LoginTest"/>
+        </classes>
+    </test>
+
+    <!-- ── Discovery ───────────────────────────────────────────── -->
+    <test name="Full - Search (All Groups)">
+        <classes>
+            <class name="com.testScenarios.SearchTest"/>
+        </classes>
+    </test>
+
+    <test name="Full - Filter (All Groups)">
+        <classes>
+            <class name="com.testScenarios.FilterTest"/>
+        </classes>
+    </test>
+
+    <!-- ── Cart ────────────────────────────────────────────────── -->
+    <test name="Full - Add To Cart (All Groups)">
+        <classes>
+            <class name="com.testScenarios.AddToCartTest"/>
+        </classes>
+    </test>
+
+    <test name="Full - Update Cart (All Groups)">
+        <classes>
+            <class name="com.testScenarios.UpdateCartTest"/>
+        </classes>
+    </test>
+
+    <test name="Full - Delete Cart Item (All Groups)">
+        <classes>
+            <class name="com.testScenarios.DeleteItemInCartTest"/>
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,145 @@
+================================================================================
+HUỚNG DẪN SỬ DỤNG JSONHELPER - AUTOMATION TESTING FRAMEWORK
+================================================================================
+
+Class `JsonHelper` là một công cụ cực kỳ hữu ích và bổ khuyết hoàn hảo cho các class đọc dữ liệu tĩnh (Read-only) trong dự án. Trong khi các class đọc thông thường chuyên dùng để lấy test data cố định từ `src/test/resources`, thì `JsonHelper` lại tập trung vào khả năng GHI VÀ SỬA ĐỔI (Write/Update) trực tiếp trên file JSON qua đường dẫn tuyệt đối hoặc tương đối (`filePath`).
+
+Trong Automation Test, class này thường được ứng dụng mạnh mẽ khi bạn cần LƯU TRỮ DỮ LIỆU ĐỘNG GIỮA CÁC TEST CASE.
+Ví dụ kịch bản:
+   Case 1: Chạy API tạo mới Account thành công -> Lấy ID/Token ghi đè vào file JSON.
+   Case 2: Mở file JSON ra, lấy ID/Token động đó để làm input chạy tiếp.
+
+--------------------------------------------------------------------------------
+1. CƠ CHẾ HOẠT ĐỘNG CHI TIẾT CỦA CÁC HÀM
+--------------------------------------------------------------------------------
+Class này hoạt động theo mô hình 3 bước liên hoàn:
+   [Đọc file lên bộ nhớ] -> [Sửa đổi trên Object Java] -> [Ghi đè lại vào file]
+
+* getJsonObject(String filePath)
+  - Cách hoạt động: Tìm đến file theo đường dẫn `filePath`, đọc toàn bộ nội dung
+    dưới dạng chuỗi (String), sau đó dùng `JsonParser` để chuyển chuỗi đó thành
+    đối tượng `JsonObject` của thư viện Gson giúp Java thao tác được.
+  - Lưu ý: Hàm này đọc file hệ thống (`Files.readAllBytes`), do đó đường dẫn
+    truyền vào phải là đường dẫn file thực tế trên ổ đĩa (không phải classpath).
+
+* updateValue(String filePath, String key, Object value)
+  - Cách hoạt động: Dùng cho các file JSON dạng phẳng (cấp 1). Hàm tự động kiểm
+    tra kiểu dữ liệu của biến `value` truyền vào (String, Number, Boolean, hoặc
+    JsonElement) để map tương ứng vào hàm `.addProperty()` hoặc `.add()` của Gson,
+    sau đó lưu đè lại file. Nếu key chưa có sẽ tự thêm mới, nếu có rồi sẽ ghi đè.
+
+* updateNestedValue(String filePath, String compositeKey, String newValue)
+  - Cách hoạt động: Xử lý các Object lồng nhau nhiều tầng bằng cơ chế chuỗi định vị
+    phân cách bởi dấu chấm (Ví dụ: "booking.customerInfo.phone").
+  - Hàm sử dụng `.split("\.")` để cắt chuỗi thành mảng các key, dùng vòng lặp `for`
+    để đi sâu dần vào cấu trúc JSON. Nếu trên đường đi gặp tầng chưa tồn tại, nó
+    sẽ tự động khởi tạo cặp ngoặc nhọn `{}` rỗng mới rồi đi tiếp. Đến tầng cuối
+    cùng, nó sẽ điền giá trị `newValue` vào.
+
+* removeKey(String filePath, String key)
+  - Cách hoạt động: Mở file, kiểm tra key cấp 1 có tồn tại hay không bằng `.has(key)`.
+    Nếu có, tiến hành xóa bỏ bằng `.remove(key)` và lưu lại file.
+
+* saveFile(String filePath, JsonObject jsonObject)
+  - Cách hoạt động: Hàm bổ trợ nội bộ (`private`). Sử dụng `FileWriter` kết hợp
+    với cấu hình `.setPrettyPrinting()` của Gson để ghi đè dữ liệu mới vào file,
+    tự động thụt lề chuẩn hóa giúp cấu trúc JSON rõ ràng, đẹp mắt.
+
+--------------------------------------------------------------------------------
+2. HƯỚNG DẪN SỬ DỤNG VÀ VÍ DỤ THỰC TẾ
+--------------------------------------------------------------------------------
+Giả sử bạn có một file lưu trữ thông tin trạng thái chạy test tên là `runtimeData.json`
+nằm tại thư mục gốc của project.
+
+KỊCH BẢN 1: CẬP NHẬT HOẶC THÊM MỚI KEY ĐƠN GIẢN (Hàm updateValue)
+----------------------------------------------------------------
+* Trạng thái ban đầu của file `runtimeData.json`:
+{}
+
+* Code Automation thực thi:
+  String filePath = "runtimeData.json";
+
+  // 1. Thêm mới/Cập nhật một String (Token)
+  JsonHelper.updateValue(filePath, "token", "eyJhbGciOiJIUzI1Ni...");
+
+  // 2. Thêm mới/Cập nhật một Number (Status code)
+  JsonHelper.updateValue(filePath, "lastStatusCode", 200);
+
+  // 3. Thêm mới/Cập nhật một Boolean (Trạng thái chạy)
+  JsonHelper.updateValue(filePath, "isSuccess", true);
+
+* Kết quả file `runtimeData.json` sau khi chạy:
+{
+  "token": "eyJhbGciOiJIUzI1Ni...",
+  "lastStatusCode": 200,
+  "isSuccess": true
+}
+
+
+KỊCH BẢN 2: CẬP NHẬT OBJECT LỒNG NHAU NHIỀU TẦNG (Hàm updateNestedValue)
+-----------------------------------------------------------------------
+* Trạng thái ban đầu của file `runtimeData.json`:
+{
+  "environment": "staging",
+  "booking": {
+    "customerInfo": {
+      "name": "Hoang Dinh",
+      "phone": "0901234567"
+    }
+  }
+}
+
+* Code Automation thực thi:
+  String filePath = "runtimeData.json";
+
+  // Cập nhật key đã có sẵn ở tầng sâu
+  JsonHelper.updateNestedValue(filePath, "booking.customerInfo.phone", "0988888888");
+
+  // Tự động tạo thêm key mới "email" lồng vào đúng cấu trúc có sẵn
+  JsonHelper.updateNestedValue(filePath, "booking.customerInfo.email", "test@gmail.com");
+
+  // Thử tạo một đường dẫn hoàn toàn mới chưa từng xuất hiện
+  JsonHelper.updateNestedValue(filePath, "meta.report.status", "PASSED");
+
+* Kết quả file `runtimeData.json` sau khi chạy:
+{
+  "environment": "staging",
+  "booking": {
+    "customerInfo": {
+      "name": "Hoang Dinh",
+      "phone": "0988888888",
+      "email": "test@gmail.com"
+    }
+  },
+  "meta": {
+    "report": {
+      "status": "PASSED"
+    }
+  }
+}
+(*Lưu ý: Tại nhánh "meta.report.status", do các node cha chưa tồn tại, hàm đã tự
+ động sinh ra các cặp ngoặc nhọn lồng nhau một cách chính xác).
+
+
+KỊCH BẢN 3: XÓA BỚT DỮ LIỆU THỪA SAU KHI TEST XONG (Hàm removeKey)
+-----------------------------------------------------------------
+Thường dùng trong hàm dọn dẹp `@AfterSuite` để xóa bỏ dữ liệu rác, tránh ảnh hưởng
+đến các lần chạy test sau.
+
+* Code Automation thực thi:
+  String filePath = "runtimeData.json";
+  JsonHelper.removeKey(filePath, "token");
+
+* Kết quả:
+Key "token" sẽ biến mất hoàn toàn khỏi file JSON cấp 1, các key khác giữ nguyên.
+
+================================================================================
+LƯU Ý QUAN TRỌNG KHI VẬN HÀNH
+================================================================================
+1. Thread-Safety: Nếu bạn chạy test song song (Parallel), việc nhiều luồng cùng
+   ghi đè vào một file JSON tại một thời điểm có thể gây lỗi định dạng. Nên cho
+   chạy tuần tự hoặc thiết lập mỗi luồng ghi ra một file JSON riêng biệt.
+2. Ép kiểu của hàm lồng sâu: Hàm `updateNestedValue` hiện tại đang nhận tham số
+   cuối cùng là `String newValue`. Do đó, nếu bạn cập nhật số hoặc boolean vào
+   tầng sâu, nó sẽ lưu dưới dạng chuỗi (Ví dụ: "status": "true").
+================================================================================
