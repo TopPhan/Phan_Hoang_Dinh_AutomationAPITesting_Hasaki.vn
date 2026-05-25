@@ -14,7 +14,7 @@ on:
       env:
         description: 'Môi trường chạy test (dev / staging / prod)'
         required: false
-        default: 'staging'
+        default: 'dev'
 
 jobs:
   API_Test:
@@ -78,7 +78,7 @@ jobs:
       - name: Run API Tests
         run: |
           SUITE="${{ github.event.inputs.suite || 'SuiteSmoke.xml' }}"
-          ENV="${{ github.event.inputs.env || 'staging' }}"
+          ENV="${{ github.event.inputs.env || 'dev' }}"
           echo "Suite : $SUITE"
           echo "Env   : $ENV"
           mvn clean test \
