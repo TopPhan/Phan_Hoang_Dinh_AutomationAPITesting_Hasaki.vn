@@ -48,7 +48,7 @@
 
 ## 🌿 Project Overview
 
-**Hasaki.vn API Testing** is a production-grade REST API test automation framework targeting the backend APIs of [Hasaki.vn](https://hasaki.vn/) — Vietnam's leading beauty & skincare e-commerce platform.  
+**Hasaki.vn API Testing** is a REST API test automation framework targeting the backend APIs of [Hasaki.vn](https://hasaki.vn/) — Vietnam's leading beauty & skincare e-commerce platform.  
 Built with **REST-Assured**, **TestNG**, and a layered keyword-driven architecture, this framework validates the full API surface across Authentication, Search, Filter, and Cart operations — covering positive, negative, security, schema, performance, and end-to-end scenarios — with automated Allure reporting deployed to GitHub Pages on every CI run.
 
 | Metric | Result |
