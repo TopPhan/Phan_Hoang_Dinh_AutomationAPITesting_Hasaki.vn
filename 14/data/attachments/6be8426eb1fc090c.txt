@@ -1,0 +1,281 @@
+RESPONSE:
+{
+    "status": {
+        "error_code": 0,
+        "error_message": null,
+        "alert_message": null
+    },
+    "data": {
+        "sub_total": 3365000,
+        "discount": 0,
+        "grand_total": 3365000,
+        "products": [
+            {
+                "id": 244088,
+                "sku": "422332093",
+                "name": "[Mini] Son Thỏi 3CE Mềm Môi 08 Hush Red - Đỏ Mâm Xôi 1.5g",
+                "english_name": "Cashmere Hug Lipstick",
+                "brand": {
+                    "name": "3CE",
+                    "url": "https://hasaki.vn/thuong-hieu/3ce.html"
+                },
+                "image": "https://media.hcdn.vn/catalog/product/f/a/facebook-dynamic-mini-son-thoi-3ce-mem-moi-08-hush-red-do-mam-xoi-1-5g-1760081994.jpg",
+                "product_url": "https://hasaki.vn/san-pham/son-thoi-3ce-mem-moi-35g-183192.html?id=244088",
+                "price": 59000,
+                "final_price": 59000,
+                "market_price": 130000,
+                "quantity": 898,
+                "quantity_ordered": 11,
+                "branch": {
+                    "total": 325,
+                    "stock_available": 1,
+                    "in_stock": 1
+                },
+                "out_stock_text": null,
+                "spa": null,
+                "attribute_selected": [
+                    {
+                        "id": 0,
+                        "label": "Dung Tích: 1.5g"
+                    },
+                    {
+                        "id": 0,
+                        "label": "Màu sắc: 08 Hush Red"
+                    }
+                ],
+                "product_gift": null,
+                "now_free": true,
+                "alerts": null,
+                "category_list": [
+                    {
+                        "id": 3,
+                        "name": "Sức Khỏe - Làm Đẹp",
+                        "level": 2,
+                        "is_active": 1,
+                        "url": "https://hasaki.vn/danh-muc/suc-khoe-lam-dep-c3.html"
+                    },
+                    {
+                        "id": 23,
+                        "name": "Trang Điểm",
+                        "level": 3,
+                        "is_active": 1,
+                        "url": "https://hasaki.vn/danh-muc/trang-diem-c23.html"
+                    },
+                    {
+                        "id": 24,
+                        "name": "Trang Điểm Môi",
+                        "level": 4,
+                        "is_active": 1,
+                        "url": "https://hasaki.vn/danh-muc/trang-diem-moi-c24.html"
+                    },
+                    {
+                        "id": 277,
+                        "name": "Son Thỏi",
+                        "level": 5,
+                        "is_active": 1,
+                        "url": "https://hasaki.vn/danh-muc/son-moi-c277.html"
+                    }
+                ],
+                "allow_checkout": true,
+                "isLiked": false
+            },
+            {
+                "id": 99791,
+                "sku": "422206740",
+                "name": "Son Thỏi Lip On Lip Dưỡng Môi Sunset Peach - Cam Đào 2.2g",
+                "english_name": "Glowy Satin",
+                "brand": {
+                    "name": "Lip On Lip",
+                    "url": "https://hasaki.vn/thuong-hieu/lip-on-lip.html"
+                },
+                "image": "https://media.hcdn.vn/catalog/product/f/a/facebook-dynamic-son-trang-diem-lip-on-lip-sunset-peach-cam-dao-2-2g-1772160451.jpg",
+                "product_url": "https://hasaki.vn/san-pham/son-trang-diem-lip-on-lip-duong-moi-glowy-satin-2-2g-99879.html?id=99791",
+                "price": 128000,
+                "final_price": 128000,
+                "market_price": 179000,
+                "quantity": 8,
+                "quantity_ordered": 5,
+                "branch": {
+                    "total": 325,
+                    "stock_available": 5,
+                    "in_stock": 8
+                },
+                "out_stock_text": null,
+                "spa": null,
+                "attribute_selected": [
+                    {
+                        "id": 0,
+                        "label": "Màu sắc: Sunset Peach"
+                    }
+                ],
+                "product_gift": null,
+                "now_free": true,
+                "alerts": null,
+                "category_list": [
+                    {
+                        "id": 3,
+                        "name": "Sức Khỏe - Làm Đẹp",
+                        "level": 2,
+                        "is_active": 1,
+                        "url": "https://hasaki.vn/danh-muc/suc-khoe-lam-dep-c3.html"
+                    },
+                    {
+                        "id": 23,
+                        "name": "Trang Điểm",
+                        "level": 3,
+                        "is_active": 1,
+                        "url": "https://hasaki.vn/danh-muc/trang-diem-c23.html"
+                    },
+                    {
+                        "id": 24,
+                        "name": "Trang Điểm Môi",
+                        "level": 4,
+                        "is_active": 1,
+                        "url": "https://hasaki.vn/danh-muc/trang-diem-moi-c24.html"
+                    },
+                    {
+                        "id": 277,
+                        "name": "Son Thỏi",
+                        "level": 5,
+                        "is_active": 1,
+                        "url": "https://hasaki.vn/danh-muc/son-moi-c277.html"
+                    }
+                ],
+                "allow_checkout": true,
+                "isLiked": false
+            },
+            {
+                "id": 68874,
+                "sku": "333900013",
+                "name": "Son Dưỡng LipIce Hiệu Chỉnh Sắc Môi - Đỏ Mọng 2.4g",
+                "english_name": "Sheer Color - Red",
+                "brand": {
+                    "name": "LipIce",
+                    "url": "https://hasaki.vn/thuong-hieu/lipice.html"
+                },
+                "image": "https://media.hcdn.vn/catalog/product/f/a/facebook-dynamic-son-duong-co-mau-lipice-do-mong-2-4g-1721879608.jpg",
+                "product_url": "https://hasaki.vn/san-pham/son-duong-lipice-sheer-color-hieu-chinh-sac-moi-24g-1-111034.html?id=68874",
+                "price": 67000,
+                "final_price": 67000,
+                "market_price": 85000,
+                "quantity": 1845,
+                "quantity_ordered": 12,
+                "branch": {
+                    "total": 325,
+                    "stock_available": 315,
+                    "in_stock": 1806
+                },
+                "out_stock_text": null,
+                "spa": null,
+                "attribute_selected": [
+                    {
+                        "id": 0,
+                        "label": "Color: Đỏ Mọng"
+                    }
+                ],
+                "product_gift": null,
+                "now_free": true,
+                "alerts": [
+                    "Lưu ý: Hiện tại Hasaki đang bán song song cả 2 mẫu cũ và mới."
+                ],
+                "category_list": [
+                    {
+                        "id": 3,
+                        "name": "Sức Khỏe - Làm Đẹp",
+                        "level": 2,
+                        "is_active": 1,
+                        "url": "https://hasaki.vn/danh-muc/suc-khoe-lam-dep-c3.html"
+                    },
+                    {
+                        "id": 23,
+                        "name": "Trang Điểm",
+                        "level": 3,
+                        "is_active": 1,
+                        "url": "https://hasaki.vn/danh-muc/trang-diem-c23.html"
+                    },
+                    {
+                        "id": 24,
+                        "name": "Trang Điểm Môi",
+                        "level": 4,
+                        "is_active": 1,
+                        "url": "https://hasaki.vn/danh-muc/trang-diem-moi-c24.html"
+                    },
+                    {
+                        "id": 25,
+                        "name": "Son Dưỡng Môi",
+                        "level": 5,
+                        "is_active": 1,
+                        "url": "https://hasaki.vn/danh-muc/son-duong-moi-c25.html"
+                    }
+                ],
+                "allow_checkout": true,
+                "isLiked": false
+            },
+            {
+                "id": 6710,
+                "sku": "232100001",
+                "name": "Son Dưỡng Môi DHC Không Màu Hỗ Trợ Giảm Thâm Môi 1.5g",
+                "english_name": "Lip Cream",
+                "brand": {
+                    "name": "DHC",
+                    "url": "https://hasaki.vn/thuong-hieu/dhc.html"
+                },
+                "image": "https://media.hcdn.vn/catalog/product/f/a/facebook-dynamic-son-duong-moi-khong-mau-dhc-ho-tro-giam-tham-moi-1-5g-1726645943.jpg",
+                "product_url": "https://hasaki.vn/san-pham/son-duong-moi-khong-mau-dhc-ho-tro-giam-tham-moi-1-5g-6710.html",
+                "price": 159000,
+                "final_price": 159000,
+                "market_price": 225000,
+                "quantity": 14096,
+                "quantity_ordered": 8,
+                "branch": {
+                    "total": 325,
+                    "stock_available": 325,
+                    "in_stock": 10506
+                },
+                "out_stock_text": null,
+                "spa": null,
+                "attribute_selected": null,
+                "product_gift": null,
+                "now_free": true,
+                "alerts": null,
+                "category_list": [
+                    {
+                        "id": 3,
+                        "name": "Sức Khỏe - Làm Đẹp",
+                        "level": 2,
+                        "is_active": 1,
+                        "url": "https://hasaki.vn/danh-muc/suc-khoe-lam-dep-c3.html"
+                    },
+                    {
+                        "id": 23,
+                        "name": "Trang Điểm",
+                        "level": 3,
+                        "is_active": 1,
+                        "url": "https://hasaki.vn/danh-muc/trang-diem-c23.html"
+                    },
+                    {
+                        "id": 24,
+                        "name": "Trang Điểm Môi",
+                        "level": 4,
+                        "is_active": 1,
+                        "url": "https://hasaki.vn/danh-muc/trang-diem-moi-c24.html"
+                    },
+                    {
+                        "id": 25,
+                        "name": "Son Dưỡng Môi",
+                        "level": 5,
+                        "is_active": 1,
+                        "url": "https://hasaki.vn/danh-muc/son-duong-moi-c25.html"
+                    }
+                ],
+                "allow_checkout": true,
+                "isLiked": false
+            }
+        ],
+        "order_gifts": null,
+        "order_alerts": [
+            
+        ],
+        "alerts_warring": null
+    }
+}

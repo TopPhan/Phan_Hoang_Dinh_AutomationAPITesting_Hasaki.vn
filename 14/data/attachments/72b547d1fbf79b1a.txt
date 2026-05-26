@@ -1,0 +1,1 @@
+PASS: TC_F09_InvalidPlatformNoServerError

@@ -1,0 +1,13 @@
+RESPONSE:
+{
+    "status": {
+        "error_code": 0,
+        "error_message": "",
+        "alert_message": ""
+    },
+    "data": {
+        "filter": [
+            
+        ]
+    }
+}

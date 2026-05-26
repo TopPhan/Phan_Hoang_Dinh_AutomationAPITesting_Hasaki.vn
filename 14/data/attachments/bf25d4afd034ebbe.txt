@@ -1,0 +1,9 @@
+RESPONSE:
+{
+    "status": {
+        "error_code": 2,
+        "error_message": "product id not exists",
+        "alert_message": "Xóa sản phẩm không thành công !"
+    },
+    "data": null
+}

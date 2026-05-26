@@ -1,0 +1,9 @@
+RESPONSE:
+{
+    "status": {
+        "error_code": 3,
+        "error_message": "failed",
+        "alert_message": "Cập nhật thất bại, sản phẩm hiện tại đã hết hàng !"
+    },
+    "data": null
+}

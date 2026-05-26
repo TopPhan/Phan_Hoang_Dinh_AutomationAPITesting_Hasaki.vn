@@ -1,0 +1,1 @@
+PASS: TC_L07_LoginResponseSchema
